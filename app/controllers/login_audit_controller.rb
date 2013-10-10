@@ -16,5 +16,17 @@ class LoginAuditController < ApplicationController
   end
 
   def purge
+    if params[:purge_offset] and params[:purge_offset].to_i > 0
+      offset = -(params[:purge_offset].to_i)
+      older_than = offset.month.from_now
+      #Delete records older than offset months
+      count=LoginAudit.delete_all(['created_on < ?',older_than])
+
+      flash[:notice] = l(:notice_la_records_deleted, :count => count.to_s, :date => format_time(older_than))
+    else
+      flash[:error] = l(:error_la_bad_parameters)
+    end
+
+    redirect_to action: 'index', status: :found
   end
 end
