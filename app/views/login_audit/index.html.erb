@@ -1,0 +1,34 @@
+<% i= @from %>
+<h2><%= l(:label_la_admin) %></h2>
+<table class="list">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th><%= l(:label_date) %></th>
+    <th colspan="2"><%= l(:label_user) %></th>
+    <th><%= l(:label_la_ip_address) %></th>
+  </tr>
+  </thead>
+  <% @audits.each do |audit| %>
+      <% i+=1 %>
+      <tr class="<%= cycle 'even', 'odd' %>">
+        <td><%= i %></td>
+        <td>
+          <%= format_time(audit.created_on) %>
+        </td>
+        <td>
+          <%= avatar(audit.user, :size => "16") unless audit.user.nil? %>
+        </td>
+        <td>
+          <%= link_to_user(audit.user) unless audit.user.nil? %>
+        </td>
+        <td>
+          <%= audit.ip_address %>
+        </td>
+      </tr>
+  <% end %>
+</table>
+
+<%= link_to l(:label_previous), url_for(:controller => 'login_audit', :action => 'index', :from => @from-@increment), :class => 'icon-hr_organizations' if @from > 0 %>
+<%= l(:label_la_from_to, :from => @from+1, :to => i) %>
+<%= link_to l(:label_next), url_for(:controller => 'login_audit', :action => 'index', :from => @from+@increment), :class => 'icon-hr_organizations' if @from + @increment < @record_count %>
