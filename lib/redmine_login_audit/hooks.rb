@@ -12,7 +12,7 @@ module RedmineLoginAudit
       )
       flash[:error]= "Login Audit save failed" unless audit.save
 
-      unless Setting.plugin_redmine_login_audit['notification_email'].empty?
+      unless Setting.plugin_redmine_login_audit['notification_email'].nil? or Setting.plugin_redmine_login_audit['notification_email'].empty?
         begin
           flash[:error]= "Login Audit Mailing failed" unless LoginAuditMailer.login_audit_notification(
               Setting.plugin_redmine_login_audit['notification_email'],
