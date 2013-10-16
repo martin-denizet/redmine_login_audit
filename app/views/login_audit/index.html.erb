@@ -6,7 +6,7 @@
       <%= l(:label_month) %>
       <%= submit_tag(l(:label_la_delete_history)) %>
   <% end %>
-    <%= link_to l(:button_configure), url_for(:controller => 'settings', :action => 'plugin', :id => 'redmine_login_audit') %>
+  <%= link_to l(:button_configure), url_for(:controller => 'settings', :action => 'plugin', :id => 'redmine_login_audit') %>
 </div>
 <h2><%= l(:label_la_admin) %></h2>
 <table class="list">
@@ -38,6 +38,15 @@
   <% end %>
 </table>
 
-<%= link_to l(:label_previous), url_for(:controller => 'login_audit', :action => 'index', :from => @from-@increment), :class => 'icon-hr_organizations' if @from > 0 %>
-<%= l(:label_la_from_to, :from => @from+1, :to => i) %>
-<%= link_to l(:label_next), url_for(:controller => 'login_audit', :action => 'index', :from => @from+@increment), :class => 'icon-hr_organizations' if @from + @increment < @record_count %>
+
+<div class="login-audit-pager">
+  <em>
+    <%= l(:label_la_from_to, :from => @from+1, :to => i, :count => @record_count ) %>
+  </em>
+
+  <p>
+    <%= link_to l(:label_previous), url_for(:controller => 'login_audit', :action => 'index', :from => @from-@increment), :class => 'icon icon-previous' if @from > 0 %>
+
+    <%= link_to l(:label_next), url_for(:controller => 'login_audit', :action => 'index', :from => @from+@increment), :class => 'icon-right icon-next' if @from + @increment < @record_count %>
+  </p>
+</div>

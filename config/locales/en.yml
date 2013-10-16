@@ -2,7 +2,7 @@
 en:
   label_la_admin: "Login Audit"
   label_la_ip_address: "IP Address"
-  label_la_from_to: "From #%{from} To #%{to}"
+  label_la_from_to: "#%{from} To #%{to} Out of %{count}"
   label_la_audit_records_per_page: "Number of records to display per page"
   label_la_notification_email: "Email to notify"
   help_la_mail_address: "This email address will receive an email every time a user successfully login. Leave empty to disable."
