@@ -1,5 +1,6 @@
 class LoginAuditController < ApplicationController
   unloadable
+  layout 'admin'
 
   before_filter :require_admin
 
