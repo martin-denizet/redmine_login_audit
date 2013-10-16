@@ -1,12 +1,12 @@
 <% i= @from %>
 <div class="contextual">
-  <%= form_tag url_for( :controller => 'login_audit', :action => 'purge' ) do %>
+  <%= form_tag url_for(:controller => 'login_audit', :action => 'purge') do %>
       <%= l(:label_la_delete_older_than) %>
       <%= select_tag(:purge_offset, options_for_select(choices_for_purge)) %>
       <%= l(:label_month) %>
       <%= submit_tag(l(:label_la_delete_history)) %>
   <% end %>
-
+    <%= link_to l(:button_configure), url_for(:controller => 'settings', :action => 'plugin', :id => 'redmine_login_audit') %>
 </div>
 <h2><%= l(:label_la_admin) %></h2>
 <table class="list">
