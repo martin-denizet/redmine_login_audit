@@ -1,0 +1,23 @@
+#admin-menu a.login-audit {
+    background-image: url(../images/textfield_key.png);
+}
+
+div.login-audit-pager {
+    text-align: center;
+}
+
+.icon-previous {
+    background-image: url(../images/arrow_left.png);
+}
+
+.icon-next {
+    background-image: url(../images/arrow_right.png);
+}
+
+.icon-right {
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    padding-right: 20px;
+    padding-top: 2px;
+    padding-bottom: 3px;
+}

@@ -1,0 +1,9 @@
+<p>
+  <label><%= l(:label_la_notification_email) %></label>
+  <%= text_field_tag 'settings[notification_email]', @settings[:notification_email] %>
+  <em class="info"> <%= l(:help_la_mail_address) %></em>
+</p>
+<p>
+  <label><%= l(:label_la_audit_records_per_page) %></label>
+  <%= text_field_tag 'settings[audit_rows_per_page]', @settings[:audit_rows_per_page] %>
+</p>
