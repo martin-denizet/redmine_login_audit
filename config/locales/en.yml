@@ -11,5 +11,7 @@ en:
   mail_la_body_html: "<b>%{user_name}</b> just logged in %{instance} from %{ip_address} on %{date}"
   label_la_delete_older_than: "Delete records older than "
   label_la_delete_history: "Delete now!"
+  label_la_delete_all_history: "Delete all records!"
   error_la_bad_parameters: "Bad parameters!"
   notice_la_records_deleted: "%{count} records created after %{date} were deleted!"
+  notice_la_records_all_deleted: "%{count} records were deleted!"

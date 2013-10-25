@@ -1,52 +1,60 @@
 <% i= @from %>
 <div class="contextual">
-  <%= form_tag url_for(:controller => 'login_audit', :action => 'purge') do %>
+  <%= form_tag url_for(:controller => 'login_audit', :action => 'delete') do %>
       <%= l(:label_la_delete_older_than) %>
       <%= select_tag(:purge_offset, options_for_select(choices_for_purge)) %>
       <%= l(:label_month) %>
       <%= submit_tag(l(:label_la_delete_history)) %>
   <% end %>
+  |
+  <%= form_tag url_for(:controller => 'login_audit', :action => 'delete_all') do %>
+      <%= submit_tag(l(:label_la_delete_all_history)) %>
+  <% end %>
+  |
   <%= link_to l(:button_configure), url_for(:controller => 'settings', :action => 'plugin', :id => 'redmine_login_audit') %>
 </div>
 <h2><%= l(:label_la_admin) %></h2>
-<table class="list">
-  <thead>
-  <tr>
-    <th>#</th>
-    <th><%= l(:label_date) %></th>
-    <th colspan="2"><%= l(:label_user) %></th>
-    <th><%= l(:label_la_ip_address) %></th>
-  </tr>
-  </thead>
-  <% @audits.each do |audit| %>
-      <% i+=1 %>
-      <tr class="<%= cycle 'even', 'odd' %>">
-        <td><%= i %></td>
-        <td>
-          <%= format_time(audit.created_on) %>
-        </td>
-        <td>
-          <%= avatar(audit.user, :size => "16") unless audit.user.nil? %>
-        </td>
-        <td>
-          <%= link_to_user(audit.user) unless audit.user.nil? %>
-        </td>
-        <td>
-          <%= audit.ip_address %>
-        </td>
+<% if @audits.each.any? %>
+    <table class="list">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th><%= l(:label_date) %></th>
+        <th colspan="2"><%= l(:label_user) %></th>
+        <th><%= l(:label_la_ip_address) %></th>
       </tr>
-  <% end %>
-</table>
+      </thead>
+      <% @audits.each do |audit| %>
+          <% i+=1 %>
+          <tr class="<%= cycle 'even', 'odd' %>">
+            <td><%= i %></td>
+            <td>
+              <%= format_time(audit.created_on) %>
+            </td>
+            <td>
+              <%= avatar(audit.user, :size => "16") unless audit.user.nil? %>
+            </td>
+            <td>
+              <%= link_to_user(audit.user) unless audit.user.nil? %>
+            </td>
+            <td>
+              <%= audit.ip_address %>
+            </td>
+          </tr>
+      <% end %>
+    </table>
 
+    <div class="login-audit-pager">
+      <em>
+        <%= l(:label_la_from_to, :from => @from+1, :to => i, :count => @record_count) %>
+      </em>
 
-<div class="login-audit-pager">
-  <em>
-    <%= l(:label_la_from_to, :from => @from+1, :to => i, :count => @record_count ) %>
-  </em>
+      <p>
+        <%= link_to l(:label_previous), url_for(:controller => 'login_audit', :action => 'index', :from => @from-@increment), :class => 'icon icon-previous' if @from > 0 %>
 
-  <p>
-    <%= link_to l(:label_previous), url_for(:controller => 'login_audit', :action => 'index', :from => @from-@increment), :class => 'icon icon-previous' if @from > 0 %>
-
-    <%= link_to l(:label_next), url_for(:controller => 'login_audit', :action => 'index', :from => @from+@increment), :class => 'icon-right icon-next' if @from + @increment < @record_count %>
-  </p>
-</div>
+        <%= link_to l(:label_next), url_for(:controller => 'login_audit', :action => 'index', :from => @from+@increment), :class => 'icon-right icon-next' if @from + @increment < @record_count %>
+      </p>
+    </div>
+<% else %>
+    <p class="nodata"><%= l(:label_no_data) %></p>
+<% end %>
