@@ -24,7 +24,7 @@ Then you will need to do migrate the database for the plugin.
 
 The installation is now finished and you will be able to use the plugin after you restart your Redmine instance.
 
-== Credit
+== Credits
 
 * Maiko de Andrade: Brasilian Portuguese translation
 
