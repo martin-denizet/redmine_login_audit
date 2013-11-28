@@ -28,7 +28,7 @@ class LoginAuditController < ApplicationController
       flash[:error] = l(:error_la_bad_parameters)
     end
 
-    redirect_to action: 'index', status: :found
+    redirect_to :action => 'index', :status => :found
   end
 
 
@@ -38,7 +38,7 @@ class LoginAuditController < ApplicationController
 
     flash[:notice] = l(:notice_la_records_all_deleted, :count => count.to_s)
 
-    redirect_to action: 'index', status: :found
+    redirect_to :action => 'index', :status => :found
   end
 
 end
