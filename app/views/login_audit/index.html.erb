@@ -38,7 +38,7 @@
               <%= link_to_user(audit.user) unless audit.user.nil? %>
             </td>
             <td>
-              <%= audit.ip_address %>
+              <a href="http://whois.net/ip-address-lookup/<%= audit.ip_address %>" target="_blank"><%= audit.ip_address %></a>
             </td>
           </tr>
       <% end %>
