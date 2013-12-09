@@ -8,7 +8,7 @@ en:
   help_la_mail_address: "This email address will receive an email every time a user successfully login. Leave empty to disable."
   mail_la_subject: "Redmine Login Audit: %{user_name} from %{ip_address} on %{date}"
   mail_la_body_text: "%{user_name} just logged in %{instance} from %{ip_address} on %{date}"
-  mail_la_body_html: "<b>%{user_name}</b> just logged in %{instance} from %{ip_address} on %{date}"
+  mail_la_body_html: "<b>%{user_name}</b> just logged in %{instance} from <a href='http://whois.net/ip-address-lookup/%{ip_address}' target='_blank'>%{ip_address}</a> on %{date}"
   label_la_delete_older_than: "Delete records older than "
   label_la_delete_history: "Delete now!"
   label_la_delete_all_history: "Delete all records!"

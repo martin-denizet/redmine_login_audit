@@ -10,7 +10,7 @@ pt-BR:
   help_la_mail_address: "Este endereço de e-mail irá receber e-mail cada vez que um usuário tiver sucesso ao logar. Deixe em branco para desabilitar"
   mail_la_subject: "Redmine Login Audit: %{user_name} do %{ip_address} em %{date}"
   mail_la_body_text: "%{user_name} entrou %{instance} do %{ip_address} em %{date}"
-  mail_la_body_html: "<b>%{user_name}</b> just logged in %{instance} from %{ip_address} on %{date}"
+  mail_la_body_html: "<b>%{user_name}</b> just logged in %{instance} from <a href='http://whois.net/ip-address-lookup/%{ip_address}' target='_blank'>%{ip_address}</a> on %{date}"
   label_la_delete_older_than: "Apagar registros mais antigos que "
   label_la_delete_history: "Apagar agora!"
   error_la_bad_parameters: "Parametros inválidos!"
