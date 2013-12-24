@@ -1,0 +1,18 @@
+# Author Sergei Bershadsky <sergeibershadsky@gmail.com>
+# Russian strings go here for Rails i18n
+ru:
+  label_la_admin: "Аудит входа в систему"
+  label_la_ip_address: "IP-адрес"
+  label_la_from_to: "С #%{from} по #%{to} из %{count}"
+  label_la_audit_records_per_page: "Количество записей, отображаемых на странице"
+  label_la_notification_email: "Адрес для уведомления"
+  help_la_mail_address: "На этот email-адрес будут приходить письма при каждом удачном входе пользователя. Оставьте пустым, чтобы отключить"
+  mail_la_subject: "Аудит входа в систему Redmine: %{user_name} с %{ip_address}, время %{date}"
+  mail_la_body_text: "%{user_name} только что вошел в систему %{instance} с %{ip_address}, время %{date}"
+  mail_la_body_html: "<b>%{user_name}</b> только что вошел в систему %{instance} с %{ip_address}, время %{date}"
+  label_la_delete_older_than: "Удалить записи старше чем "
+  label_la_delete_history: "Удалить!"
+  label_la_delete_all_history: "Удалить все записи!"
+  error_la_bad_parameters: "Неверные  параметры!"
+  notice_la_records_deleted: "%{count} записей созданных после %{date} были удалены!"
+  notice_la_records_all_deleted: "%{count} записей было удалено!"

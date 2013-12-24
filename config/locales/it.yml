@@ -1,0 +1,18 @@
+# Italian strings go here for Rails i18n
+# Riccardo Rocca
+it:
+  label_la_admin: "Login Audit"
+  label_la_ip_address: "Indirizzo IP"
+  label_la_from_to: "Da #%{from} a #%{to} di %{count}"
+  label_la_audit_records_per_page: "Numero di records per pagina"
+  label_la_notification_email: "Email da trasmettere"
+  help_la_mail_address: "Questo indirizzo riceverà un'email ad ogni login avvenuto con successo. Lasciare il campo vuoto per disabilitare."
+  mail_la_subject: "Redmine Login Audit: %{user_name} da %{ip_address} il %{date}"
+  mail_la_body_text: "%{user_name} si è collegato in %{instance} da %{ip_address} il %{date}"
+  mail_la_body_html: "<b>%{user_name}</b> si è collegato in %{instance} da %{ip_address} il %{date}"
+  label_la_delete_older_than: "Elimina i records più vecchi di "
+  label_la_delete_history: "Elimina ora!"
+  label_la_delete_all_history: "Elimina tutti i records!"
+  error_la_bad_parameters: "Parametri non corretti!"
+  notice_la_records_deleted: "%{count} records creati dopo %{date} sono stati eliminati!"
+  notice_la_records_all_deleted: "%{count} records sono stati eliminati!"
