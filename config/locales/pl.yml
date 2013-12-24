@@ -1,0 +1,19 @@
+# Polish translation
+# Krzysztof Dryja <dryja@aspexi.com>
+# www.aspexi.com
+pl:
+  label_la_admin: "Audyt Logowania"
+  label_la_ip_address: "Adres IP"
+  label_la_from_to: "#%{from} do #%{to} z %{count}"
+  label_la_audit_records_per_page: "Wyświetlanych rekordów na stronę"
+  label_la_notification_email: "Prześlij powiadomienia na email"
+  help_la_mail_address: "Na ten adres email zostanie przesłane powiadomienie za każdym razem gdy użytkownik się poprawnie zaloguje. Pozostaw puste pole aby wyłączyć powiadomienia na maila."
+  mail_la_subject: "Redmine Audyt Logowania: %{user_name} z %{ip_address}, %{date}"
+  mail_la_body_text: "%{user_name} właśnie się zalogował %{instance} z %{ip_address}, %{date}"
+  mail_la_body_html: "<b>%{user_name}</b> właśnie się zalogował %{instance} z <a href='http://whois.net/ip-address-lookup/%{ip_address}' target='_blank'>%{ip_address}</a>, %{date}"
+  label_la_delete_older_than: "Usuń rekordy starsze niż "
+  label_la_delete_history: "Usuń teraz!"
+  label_la_delete_all_history: "Usuń wszystkie rekordy!"
+  error_la_bad_parameters: "Błędny parametr!"
+  notice_la_records_deleted: "%{count} rekordów utworzonych po %{date} zostało usuniętych!"
+  notice_la_records_all_deleted: "%{count} rekordów zostało usuniętych!"
