@@ -3,6 +3,8 @@
 If you like this plugin, you're welcome to endorse me!
 [![endorse](https://api.coderwall.com/martin-denizet/endorsecount.png)](https://coderwall.com/martin-denizet)
 
+Work sponsored by Algen, visit us at http://algen.co
+
 ## Feature
 
 * Logs successful login attempts in Redmine
@@ -29,10 +31,11 @@ The installation is now finished and you will be able to use the plugin after yo
 
 ## Credits
 
-* Krzysztof Dryja: Original idea
+* Krzysztof Dryja: Original idea and code contribution
 * Martin Denizet: Development
 * Maiko de Andrade: Brasilian Portuguese translation
-* Author Sergei Bershadsky: Russian translation
+* Sergei Bershadsky: Russian translation
+* R-i-c-k-y: Italian translation
 
 ## License
 
