@@ -9,7 +9,7 @@ ru:
   help_la_mail_address: "На этот email-адрес будут приходить письма при каждом удачном входе пользователя. Оставьте пустым, чтобы отключить"
   mail_la_subject: "Аудит входа в систему Redmine: %{user_name} с %{ip_address}, время %{date}"
   mail_la_body_text: "%{user_name} только что вошел в систему %{instance} с %{ip_address}, время %{date}"
-  mail_la_body_html: "<b>%{user_name}</b> только что вошел в систему %{instance} с %{ip_address}, время %{date}"
+  mail_la_body_html: "<b>%{user_name}</b> только что вошел в систему %{instance} с <a href='http://www.ip-adress.com/ip_tracer/%{ip_address}' target='_blank'>%{ip_address}</a>, время %{date}"
   label_la_delete_older_than: "Удалить записи старше чем "
   label_la_delete_history: "Удалить!"
   label_la_delete_all_history: "Удалить все записи!"

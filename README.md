@@ -21,11 +21,11 @@ If anybody could be interested, the next features to implement would be:
 
 First download the plugin using git, open a terminal in your Redmine installation directory:
 
-```git clone git@github.com:martin-denizet/redmine_login_audit.git vendor/plugins/```
+```git clone git@github.com:martin-denizet/redmine_login_audit.git ./plugins/```
 
 Then you will need to do migrate the database for the plugin.
 
-```rake db:migrate_plugins RAILS_ENV=production```
+``` bundle exec rake redmine:plugins:migrate RAILS_ENV=production```
 
 The installation is now finished and you will be able to use the plugin after you restart your Redmine instance.
 

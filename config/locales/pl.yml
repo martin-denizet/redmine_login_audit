@@ -10,7 +10,7 @@ pl:
   help_la_mail_address: "Na ten adres email zostanie przesłane powiadomienie za każdym razem gdy użytkownik się poprawnie zaloguje. Pozostaw puste pole aby wyłączyć powiadomienia na maila."
   mail_la_subject: "Redmine Audyt Logowania: %{user_name} z %{ip_address}, %{date}"
   mail_la_body_text: "%{user_name} właśnie się zalogował %{instance} z %{ip_address}, %{date}"
-  mail_la_body_html: "<b>%{user_name}</b> właśnie się zalogował %{instance} z <a href='http://whois.net/ip-address-lookup/%{ip_address}' target='_blank'>%{ip_address}</a>, %{date}"
+  mail_la_body_html: "<b>%{user_name}</b> właśnie się zalogował %{instance} z <a href='http://www.ip-adress.com/ip_tracer/%{ip_address}' target='_blank'>%{ip_address}</a>, %{date}"
   label_la_delete_older_than: "Usuń rekordy starsze niż "
   label_la_delete_history: "Usuń teraz!"
   label_la_delete_all_history: "Usuń wszystkie rekordy!"
