@@ -1,4 +1,5 @@
 require_dependency 'redmine_login_audit/hooks'
+require_dependency 'redmine_login_audit/application_controller_patch'
 
 Redmine::Plugin.register :redmine_login_audit do
   name 'Redmine Login Audit plugin'
@@ -12,7 +13,8 @@ Redmine::Plugin.register :redmine_login_audit do
 
   settings :default => {
       :notification_email => '',
-      :audit_rows_per_page => 50
+      :audit_rows_per_page => 50,
+      :audit_api => false
   },
   :partial => 'settings/login_audit'
 

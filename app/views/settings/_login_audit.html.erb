@@ -7,3 +7,8 @@
   <label><%= l(:label_la_audit_records_per_page) %></label>
   <%= text_field_tag 'settings[audit_rows_per_page]', @settings[:audit_rows_per_page] %>
 </p>
+<p>
+  <label><%= l(:label_la_audit_api) %></label>
+  <%= text_field_tag 'settings[audit_api]', @settings[:audit_api] %>
+  <em class="info"> <%= l(:help_la_audit_api) %></em>
+</p>

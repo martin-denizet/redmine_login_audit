@@ -22,6 +22,7 @@
         <th><%= l(:label_date) %></th>
         <th colspan="2"><%= l(:label_user) %></th>
         <th><%= l(:label_la_ip_address) %></th>
+        <th><%= l(:label_la_client) %></th>
       </tr>
       </thead>
       <% @audits.each do |audit| %>
@@ -39,6 +40,9 @@
             </td>
             <td>
               <a href="http://www.ip-adress.com/ip_tracer/<%= audit.ip_address %>" target="_blank"><%= audit.ip_address %></a>
+            </td>
+            <td>
+              <%= audit.client %>
             </td>
           </tr>
       <% end %>
