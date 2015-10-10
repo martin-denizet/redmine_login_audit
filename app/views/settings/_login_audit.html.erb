@@ -1,3 +1,15 @@
+<% if @settings[:log_setting].to_i == LoginAudit::LoggingSetting::NOTHING %>
+    <p class="nodata">Not logging anything</p>
+<% end %>
+<p>
+  <label><%= l(:label_la_logging_settings) %></label>
+  <%= select_tag 'settings[log_setting]', options_for_select(
+          LoginAudit::LoggingSetting.to_dropdown, @settings[:log_setting] || ''
+  )
+  %>
+  <em class="info"> <%= l(:help_la_logging_settings) %></em>
+</p>
+
 <p>
   <label><%= l(:label_la_notification_email) %></label>
   <%= text_field_tag 'settings[notification_email]', @settings[:notification_email] %>
@@ -6,4 +18,9 @@
 <p>
   <label><%= l(:label_la_audit_records_per_page) %></label>
   <%= text_field_tag 'settings[audit_rows_per_page]', @settings[:audit_rows_per_page] %>
+</p>
+<p>
+  <label><%= l(:label_la_audit_api) %></label>
+  <%= check_box_tag 'settings[audit_api]', 1, @settings[:audit_api] %>
+  <em class="info"> <%= l(:help_la_audit_api).html_safe %></em>
 </p>

@@ -1,0 +1,157 @@
+/*
+* Part of WiceGrid: https://github.com/leikind/wice_grid
+* Copyright (c) 2008-2014 Yuri Leikind
+* Under MIT License
+*/
+
+.wg-detached-filter a.date-label {
+    text-decoration: none;
+}
+
+.wg-detached-filter a.date-label:hover {
+    text-decoration: line-through;
+}
+
+.wice-grid {
+    /* in case of twitter bootstrap :) */
+}
+
+.wice-grid .clickable {
+    cursor: pointer;
+    margin-bottom: 2px;
+    margin-right: 2px;
+}
+
+.wice-grid a.date-label {
+    text-decoration: none;
+}
+
+.wice-grid a.date-label:hover {
+    text-decoration: line-through;
+}
+
+.wice-grid .ui-datepicker-trigger, .wice-grid .wg-detached-filter .ui-datepicker-trigger {
+    cursor: pointer;
+}
+
+.wice-grid .desc, .wice-grid .asc {
+    padding-right: 18px;
+    text-decoration: none;
+}
+
+.wice-grid .desc {
+    background: transparent url(../images/wice_grid/arrow_down.gif) right no-repeat;
+}
+
+.wice-grid .asc {
+    background: transparent url(../images/wice_grid/arrow_up.gif) right no-repeat;
+}
+
+.wice-grid .submit.clickable {
+    background: transparent url(../images/wice_grid/table_refresh.png) no-repeat;
+    width: 16px;
+    height: 16px;
+}
+
+.wice-grid .reset.clickable {
+    background: transparent url(../images/wice_grid/table.png) no-repeat;
+    width: 16px;
+    height: 16px;
+}
+
+.wice-grid .wg-show-filter.clickable,
+.wice-grid .wg-hide-filter.clickable {
+    background: transparent url(../images/wice_grid/page_white_find.png) no-repeat;
+    width: 16px;
+    height: 16px;
+}
+
+.wice-grid .export-to-csv-button.clickable {
+    background: transparent url(../images/wice_grid/page_white_excel.png) no-repeat;
+    width: 16px;
+    height: 16px;
+}
+
+.wice-grid .clickable.select-all {
+    background: transparent url(../images/wice_grid/tick_all.png) no-repeat;
+    width: 16px;
+    height: 16px;
+    float: left;
+}
+
+.wice-grid .clickable.deselect-all {
+    background: transparent url(../images/wice_grid/untick_all.png) no-repeat;
+    width: 16px;
+    height: 16px;
+    float: left;
+}
+
+.wice-grid .custom-dropdown-container {
+    position: relative;
+    padding-right: 18px;
+}
+
+.wice-grid .custom-dropdown-container .collapse-multi-select-icon, .wice-grid .custom-dropdown-container .expand-multi-select-icon {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.wice-grid .custom-dropdown-container .collapse-multi-select-icon {
+    background: transparent url(../images/wice_grid/collapse.gif) no-repeat;
+}
+
+.wice-grid .custom-dropdown-container .expand-multi-select-icon {
+    background: transparent url(../images/wice_grid/expand.gif) no-repeat;
+}
+
+.wice-grid .text-filter-container {
+    position: relative;
+    padding-right: 13px;
+}
+
+.wice-grid .text-filter-container .negation-checkbox {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.wice-grid thead th select {
+    width: auto;
+}
+
+.wice-grid .my_pagination {
+    margin: 0px;
+    float: left;
+}
+
+.wice-grid .pagination_status {
+    font-weight: bold;
+    float: right;
+}
+
+.wice-grid-query-panel li {
+    list-style-type: none;
+}
+
+.wice-grid-query-panel ul {
+    margin-left: 0;
+}
+
+.wice-grid-query-panel a.wice-grid-delete-query .delete-icon {
+    background: transparent url(../images/wice_grid/delete.png) no-repeat;
+    float: left;
+    width: 16px;
+    height: 16px;
+}
+
+.wice-grid tr.wg-filter-row input.range-start, .wice-grid tr.wg-filter-row input.range-end {
+    width: 45% !important;
+}
+
+.wice-grid th input{
+    width: 100%;
+    padding: 0px;
+}

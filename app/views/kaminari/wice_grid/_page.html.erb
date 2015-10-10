@@ -1,0 +1,5 @@
+<% if current_page == page %>
+    <span class="current_page"><%= page %></span>
+<% else %>
+    <%= link_to page, url, {:remote => remote, :rel => page.next? ? 'next' : page.prev? ? 'prev' : nil, :class => 'page'} %>
+<% end %>

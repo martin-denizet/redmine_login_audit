@@ -22,17 +22,34 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
-module LoginAuditHelper
+module RedmineLoginAudit
+  module AccountControllerPatch
+    def self.included(base) # :nodoc:
+      base.send(:include, InstanceMethods)
 
-  def choices_for_purge
-    my_array = []
-    12.times do |i|
-      my_array<<[i+1, i+1]
+      base.class_eval do
+        alias_method_chain :invalid_credentials, :login_audit
+        alias_method_chain :onthefly_creation_failed, :login_audit
+      end
     end
-    my_array
-  end
 
-  def success_image(success=true)
-    image_tag(success ? 'true.png' : 'false.png')
+    module InstanceMethods
+      def invalid_credentials_with_login_audit
+
+        invalid_credentials_without_login_audit
+        LoginAudit.failure(nil, request, params)
+
+      end
+
+      def onthefly_creation_failed_with_login_audit
+
+        onthefly_creation_failed_without_login_audit
+        LoginAudit.failure(nil, request, params)
+
+      end
+
+    end
   end
 end
+
+AccountController.send(:include, RedmineLoginAudit::AccountControllerPatch)

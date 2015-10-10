@@ -1,3 +1,28 @@
+#
+# Copyright (C) 2014, 2015 Martin Denizet <martin.denizet@supinfo.com>
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of
+# this software and associated documentation files (the "Software"), to deal in
+# the Software without restriction, including without limitation the rights to
+# use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+# the Software, and to permit persons to whom the Software is furnished to do so,
+# subject to the following conditions:
+#
+# The Software shall not be used nor made available to TESTTailor or any
+# organization operated by Adarsh Mehta from Germany.
+# 
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+# FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+# COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+# IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+# CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+#
+
 # English strings go here for Rails i18n
 en:
   label_la_admin: "Login Audit"
@@ -5,6 +30,14 @@ en:
   label_la_from_to: "#%{from} To #%{to} Out of %{count}"
   label_la_audit_records_per_page: "Number of records to display per page"
   label_la_notification_email: "Email to notify"
+  label_la_success: Success
+  label_la_api: API
+  label_la_url: URL
+  label_la_method: Method
+  label_la_logging_settings: Log
+  help_la_logging_settings: Select what to audit
+  label_la_audit_api: Audit API
+  help_la_audit_api: When enabled, all API calls will be logged, respecting the "logging settings". <b>This will eventually generate large quantities of data!</b>
   help_la_mail_address: "This email address will receive an email every time a user successfully login. Leave empty to disable."
   mail_la_subject: "Redmine Login Audit: %{user_name} from %{ip_address} on %{date}"
   mail_la_body_text: "%{user_name} just logged in %{instance} from %{ip_address} on %{date}"
@@ -15,3 +48,36 @@ en:
   error_la_bad_parameters: "Bad parameters!"
   notice_la_records_deleted: "%{count} records created after %{date} were deleted!"
   notice_la_records_all_deleted: "%{count} records were deleted!"
+
+  settings:
+    logging:
+      nothing: Nothing (Disable)
+      successes: Successes only
+      failures: Failures only
+      both: Failures and successes
+
+  wice_grid:
+      show_filter_tooltip: Show filter
+      hide_filter_tooltip: Hide filter
+      csv_export_tooltip: Export to CSV
+      filter_tooltip: Filter
+      reset_filter_tooltip: Reset
+      boolean_filter_true_label: "yes"
+      boolean_filter_false_label: "no"
+      # Title of the icon clicking on which will show the calendar to set the FROM date.
+      date_selector_tooltip_from: From
+      # Title of the icon clicking on which will show the calendar to set the TO date.
+      date_selector_tooltip_to: To
+      # The title of the checkox to turn on negation
+      negation_checkbox_title: Exclude
+      # link to switch to show all records
+      show_all_records_label: show all
+      # tooltip for the link to switch to show all records
+      show_all_records_tooltip: Show all records
+      # Warning message shown when the user wants to switch to all-records mode
+      all_queries_warning: Are you sure you want to display all records?
+      select_all: Select all
+      deselect_all: Remove selection
+      expand: Expand
+      collapse: Collapse
+

@@ -22,17 +22,9 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
-module LoginAuditHelper
-
-  def choices_for_purge
-    my_array = []
-    12.times do |i|
-      my_array<<[i+1, i+1]
-    end
-    my_array
-  end
-
-  def success_image(success=true)
-    image_tag(success ? 'true.png' : 'false.png')
+class AddIpAddressLimit < ActiveRecord::Migration
+  def change
+    # 39 for IPv6, 15 for IPv4
+    change_column :login_audits, :ip_address, :string, :limit => 39
   end
 end

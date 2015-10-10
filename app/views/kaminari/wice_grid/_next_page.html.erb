@@ -1,0 +1,3 @@
+<% unless current_page.last? %>
+    <%= link_to (l(:label_next) + " \xc2\xbb"), url, :rel => 'next', :class => 'next', :accesskey => accesskey(:next) %>
+<% end %>

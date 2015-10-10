@@ -1,0 +1,1 @@
+gem 'wice_grid', '3.5.0'
