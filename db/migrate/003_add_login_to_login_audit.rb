@@ -22,11 +22,12 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
-require File.expand_path('../../test_helper', __FILE__)
-
-class LoginAuditControllerTest < ActionController::TestCase
-  # Replace this with your real tests.
-  def test_truth
-    assert true
+class AddLoginToLoginAudit < ActiveRecord::Migration
+  def change
+    add_column :login_audits, :login, :string
+    add_column :login_audits, :api, :boolean, default: false
+    add_column :login_audits, :url, :string, limit: 155
+    add_column :login_audits, :method, :string, limit: 6
+    remove_column :login_audits, :client
   end
 end
