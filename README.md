@@ -21,7 +21,7 @@ You can also visit my blog: http://martin-denizet.com
 
 ## Compatibility
 
-Tested on Redmine 3.x with Ruby 2.2.3
+Tested on Redmine 3.1.1 with Ruby 2.2.3
 For Redmine 2.x compatibility, check the 1.x version of the plugin
 
 ## Downloading and installing the plugin
