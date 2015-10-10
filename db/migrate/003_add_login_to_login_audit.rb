@@ -22,17 +22,12 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
-module LoginAuditHelper
-
-  def choices_for_purge
-    my_array = []
-    12.times do |i|
-      my_array<<[i+1, i+1]
-    end
-    my_array
-  end
-
-  def success_image(success=true)
-    image_tag(success ? 'true.png' : 'false.png')
+class AddLoginToLoginAudit < ActiveRecord::Migration
+  def change
+    add_column :login_audits, :login, :string
+    add_column :login_audits, :api, :boolean, default: false
+    add_column :login_audits, :url, :string, limit: 155
+    add_column :login_audits, :method, :string, limit: 6
+    remove_column :login_audits, :client
   end
 end

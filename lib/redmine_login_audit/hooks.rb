@@ -1,3 +1,27 @@
+#
+# Copyright (C) 2014, 2015 Martin Denizet <martin.denizet@supinfo.com>
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of
+# this software and associated documentation files (the "Software"), to deal in
+# the Software without restriction, including without limitation the rights to
+# use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+# the Software, and to permit persons to whom the Software is furnished to do so,
+# subject to the following conditions:
+#
+# The Software shall not be used nor made available to TESTTailor or any
+# organization operated by Adarsh Mehta from Germany.
+# 
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+# FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+# COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+# IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+# CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+#
 module RedmineLoginAudit
   module Hooks
     class ControllerAccountSuccessAuthenticationAfterHook < Redmine::Hook::ViewListener
@@ -5,32 +29,15 @@ module RedmineLoginAudit
         #Create the Audit record
         user = context[:user]
         request = context[:request]
-        audit = LoginAudit.new(
-            :user => user,
-            :ip_address => request.remote_ip,
-            :success => true,
-            :client => request.media_type
-        )
-        flash[:error]= "Login Audit save failed" unless audit.save
 
-        unless Setting.plugin_redmine_login_audit['notification_email'].nil? or Setting.plugin_redmine_login_audit['notification_email'].empty?
-          begin
-            flash[:error]= "Login Audit Mailing failed" unless LoginAuditMailer.login_audit_notification(
-                Setting.plugin_redmine_login_audit['notification_email'],
-                user,
-                audit
-            ).deliver
-          rescue Exception => e
-            flash[:error]= "Login Audit Mailing failed:"+e
-          end
-        end
+        LoginAudit.success(user, request, context[:params])
 
       end
     end
 
     class RedmineLoginAuditHookListener < Redmine::Hook::ViewListener
       def view_layouts_base_html_head(context)
-        stylesheet_link_tag 'login_audit', :plugin => :redmine_login_audit
+        stylesheet_link_tag 'login_audit', :plugin => :redmine_login_audit if context[:controller].is_a?(AdminController) or context[:controller].is_a?(SettingsController)
       end
     end
   end
