@@ -1,0 +1,17 @@
+# English strings go here for Rails i18n
+en:
+  label_la_admin: "Login履歴"
+  label_la_ip_address: "IP Address"
+  label_la_from_to: "#%{from} から #%{to} から %{count}"
+  label_la_audit_records_per_page: "1ページの表示件数"
+  label_la_notification_email: "ログイン通知するメールアドレス"
+  help_la_mail_address: "ログインする度にこのメールアドレスに通知されます。不要な場合は空欄にしてください"
+  mail_la_subject: "Redmine Login Audit: %{user_name} が %{ip_address} から %{date} にログインしました"
+  mail_la_body_text: "%{user_name} がログイン中です logged in %{instance} from %{ip_address} on %{date}"
+  mail_la_body_html: "<b>%{user_name}</b> が %{date} に次のIP Addressでログインしました %{instance} <a href='http://www.ip-adress.com/ip_tracer/%{ip_address}' target='_blank'>%{ip_address}</a>"
+  label_la_delete_older_than: "次の月より以前の履歴を削除"
+  label_la_delete_history: "削除"
+  label_la_delete_all_history: "履歴を全削除"
+  error_la_bad_parameters: "不正なパラメーター"
+  notice_la_records_deleted: "%{date} 以降の %{count} 件の記録を削除しました"
+  notice_la_records_all_deleted: "%{count} 件の記録を削除しました"
