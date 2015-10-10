@@ -1,0 +1,51 @@
+<%= grid(@records_grid, upper_pagination_panel: true) do |g|
+
+  g.blank_slate do
+    content_tag :p, l(:label_no_data), class: 'nodata'
+  end
+
+  g.column name: t(:label_la_success), in_csv: false, attribute: 'success' do |audit|
+    success_image(audit.success)
+  end
+
+  g.column name: t(:label_la_success), in_html: false, attribute: 'success' do |audit|
+    audit.success
+  end
+
+  g.column name: t(:label_date), attribute: 'created_on' do |audit|
+    format_time(audit.created_on)
+  end
+
+  g.column name: t(:label_la_api), in_csv: false, attribute: 'api' do |audit|
+    checked_image(audit.api?)
+  end
+
+  g.column name: t(:label_la_api), in_html: false, attribute: 'api'
+
+  g.column name: '', in_csv: false do |audit|
+    avatar(audit.user, :size => '16') unless audit.user.nil?
+  end
+
+  g.column name: t(:field_firstname), in_csv: false, attribute: 'firstname', model: 'User' do |audit|
+    link_to(audit.user.firstname, user_path(audit.user), :class => audit.user.css_classes) unless audit.user.nil?
+  end
+
+  g.column name: t(:field_lastname), in_csv: false, attribute: 'lastname', model: 'User' do |audit|
+    link_to(audit.user.lastname, user_path(audit.user), :class => audit.user.css_classes) unless audit.user.nil?
+  end
+
+  g.column name: t(:label_user), in_html: false do |audit|
+    audit.user unless audit.user.nil?
+  end
+
+  g.column name: t(:field_login), attribute: 'login'
+
+  g.column name: t(:label_la_ip_address), in_csv: false, attribute: 'ip_address' do |audit|
+    link_to audit.ip_address, "http://www.ip-adress.com/ip_tracer/#{audit.ip_address}", target: '_blank'
+  end
+
+  g.column name: t(:label_la_ip_address), in_html: false, attribute: 'ip_address'
+  g.column name: t(:label_la_url), attribute: 'url'
+  g.column name: t(:label_la_method), attribute: 'method'
+
+end -%>
