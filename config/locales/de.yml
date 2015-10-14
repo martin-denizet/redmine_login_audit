@@ -1,0 +1,58 @@
+# German strings go here for Rails i18n
+de:
+  label_la_admin: "Login Audit"
+  label_la_ip_address: "IP Adresse"
+  label_la_from_to: "#%{from} An #%{to} aus Einträgen von %{count}"
+  label_la_audit_records_per_page: "Einträge pro Seite"
+  label_la_notification_email: "Benachrichtigungsemail"
+  label_la_success: Erfolgreich
+  label_la_api: API
+  label_la_url: URL
+  label_la_method: Methode
+  label_la_logging_settings: Protokoll
+  help_la_logging_settings: "Festlegen, was überwacht werden soll"
+  label_la_audit_api: API protokollieren
+  help_la_audit_api: "Wenn aktiviert, werden auch die API Aufrufe mit Berücksichtigung der Einstellungen aufgezeichnet. <b>Dies kann eine große Menge an Einträgen verursachen!</b>"
+  help_la_mail_address: "An diese E-Mail Adresse werden alle E-Mails verschickt, sobald sich ein Benutzer erfolgreich angemeldet hat. Leer lassen, um die Funktion zu deaktivieren."
+  mail_la_subject: "Redmine Login Audit: %{user_name} von %{ip_address} am %{date}"
+  mail_la_body_text: "%{user_name} hat sich eben eingeloggt %{instance} von %{ip_address} am %{date}"
+  mail_la_body_html: "<b>%{user_name}</b> hat sich eben eingelogggt %{instance} von <a href='http://www.ip-adress.com/ip_tracer/%{ip_address}' target='_blank'>%{ip_address}</a> am %{date}"
+  label_la_delete_older_than: "Einträge löschen die älter sind als "
+  label_la_delete_history: "Löschen!"
+  label_la_delete_all_history: "Alle Einträge löschen!"
+  error_la_bad_parameters: "Falsche Parameter!"
+  notice_la_records_deleted: "%{count} Einträge wurden nach dem Datum %{date} entfernt!"
+  notice_la_records_all_deleted: "%{count} Einträge wurden gelöscht!"
+
+  settings:
+    logging:
+      nothing: Nichts (deaktiviert)
+      successes: Nur erfolgreich
+      failures: Nur fehlgeschlagen
+      both: Erfolgreich und fehlgeschlagen
+
+  wice_grid:
+      show_filter_tooltip: Zeige Filter
+      hide_filter_tooltip: Verstecke Filter
+      csv_export_tooltip: Export to CSV
+      filter_tooltip: Filter
+      reset_filter_tooltip: Zurücksetzen
+      boolean_filter_true_label: Ja
+      boolean_filter_false_label: Nein
+      # Title of the icon clicking on which will show the calendar to set the FROM date.
+      date_selector_tooltip_from: Von
+      # Title of the icon clicking on which will show the calendar to set the TO date.
+      date_selector_tooltip_to: Bis
+      # The title of the checkox to turn on negation
+      negation_checkbox_title: Ausschliessen
+      # link to switch to show all records
+      show_all_records_label: Zeige alle
+      # tooltip for the link to switch to show all records
+      show_all_records_tooltip: Zeige alle Einträge
+      # Warning message shown when the user wants to switch to all-records mode
+      all_queries_warning: "Sind sie sicher, dass alle Einträge angezeigt werden sollen?"
+      select_all: Alle auswählen
+      deselect_all: Entferne ausgewählte Einträge
+      expand: Aufklappen
+      collapse: Zusammenklappen
+
