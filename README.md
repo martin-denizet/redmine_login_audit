@@ -55,8 +55,9 @@ Note that enabling API authentication logging will potentially create MASSIVE am
 * Sergei Bershadsky: Russian translation
 * R-i-c-k-y: Italian translation
 * kotashiratsuka: Japanese translations
+* alexandermeindl: German translations
 
-Using "Silk icon" by Mark James at http://www.famfamfam.com/ licensed under "Creative Commons Attribution 2.5 License"
+Uses "Silk icon" by Mark James at http://www.famfamfam.com/ licensed under "Creative Commons Attribution 2.5 License"
 Uses WiceGrid gem by Yuri Leikind licensed under "MIT License"
 
 ## How to contribute
