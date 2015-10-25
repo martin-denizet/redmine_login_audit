@@ -1,5 +1,11 @@
 #CHANGELOG
 
+## [0.2.1] - 2015-10-25
+
+### Added
+
+- German translations
+
 ## [0.2.0] - 2015-10-10
 
 ### Added
