@@ -37,7 +37,7 @@ Redmine::Plugin.register :redmine_login_audit do
   name 'Redmine Login Audit plugin'
   author 'Martin DENIZET'
   description 'Login Audit logs login attempts. Can be configured to send emails'
-  version '0.2.1'
+  version '0.2.2'
   url 'https://github.com/martin-denizet/redmine_login_audit'
   author_url 'http://martin-denizet.com'
 
