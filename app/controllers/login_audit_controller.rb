@@ -33,6 +33,7 @@ class LoginAuditController < AdminController
     per_page = Setting.plugin_redmine_login_audit[:audit_rows_per_page].to_i
 
     @records_grid = initialize_grid(LoginAudit,
+                                    include: :user,
                                     name: 'login_audit',
                                     order: 'login_audits.created_on',
                                     order_direction: 'desc',
