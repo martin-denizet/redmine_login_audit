@@ -1,6 +1,6 @@
 # Redmine Login Audit
 
-If you like this plugin, you're welcome to endorse me!
+If you like this plugin, you're welcome to endorse me on CoderWall!
 [![endorse](https://api.coderwall.com/martin-denizet/endorsecount.png)](https://coderwall.com/martin-denizet)
 You can also visit my blog: http://martin-denizet.com
 
@@ -18,10 +18,11 @@ You can also visit my blog: http://martin-denizet.com
 * Modify the way records are deleted
 * Allow to select visible columns of the table
 * Allow to configure "honeypot" users
+* Prevent brute-force password guessing
 
 ## Compatibility
 
-Tested on Redmine 3.1.1 with Ruby 2.2.3
+Tested on Redmine 3.1.x and 3.2.x with Ruby 2.2.3
 For Redmine 2.x compatibility, check the 1.x version of the plugin
 
 ## Downloading and installing the plugin
@@ -30,9 +31,13 @@ First download the plugin using git, open a terminal in your Redmine installatio
 
 ```git clone git@github.com:martin-denizet/redmine_login_audit.git ./plugins/```
 
-Then you will need to do migrate the database for the plugin.
+Install the dependencies:
 
-``` bundle exec rake redmine:plugins:migrate RAILS_ENV=production```
+```bundle install```
+
+Run the database migrations:
+
+```RAILS_ENV=production bundle exec rake redmine:plugins:migrate```
 
 The installation is now finished and you will be able to use the plugin after you restart your Redmine instance.
 
@@ -67,6 +72,12 @@ Uses WiceGrid gem by Yuri Leikind licensed under "MIT License"
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Donations
+
+As manager of this plugin, I accept donations. It helps me justifying taking time away from lucrative work and family. Many thanks!
+
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=XSNA28NKNU76S&lc=FR&item_name=Martin%20Denizet&item_number=redmine_login_audit&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="[paypal]" /></a>
 
 ## License
 

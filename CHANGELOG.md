@@ -1,5 +1,12 @@
 #CHANGELOG
 
+## [0.2.2] - 2015-12-13
+
+### Fixed
+
+- Error when no JavaScript runtime is installed. #19 thanks @Catlon
+- Error when filtering on user columns. #17 thanks @mmaker86
+
 ## [0.2.1] - 2015-10-25
 
 ### Added
