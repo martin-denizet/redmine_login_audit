@@ -22,8 +22,12 @@ You can also visit my blog: http://martin-denizet.com
 
 ## Compatibility
 
-Tested on Redmine 3.1.x and 3.2.x with Ruby 2.2.3
+Tested working with Ruby 2.2.3 on:
+* Redmine 3.1.x
+* Redmine 3.2.x
 For Redmine 2.x compatibility, check the 1.x version of the plugin
+
+*Plugin is NOT compatible with Ruby 1.9.3-p0, it is recommended to use a supported version of Ruby. See #21*
 
 ## Downloading and installing the plugin
 
