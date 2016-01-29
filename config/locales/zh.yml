@@ -1,0 +1,84 @@
+#
+# Copyright (C) 2014, 2015 Martin Denizet <martin.denizet@supinfo.com>
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of
+# this software and associated documentation files (the "Software"), to deal in
+# the Software without restriction, including without limitation the rights to
+# use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+# the Software, and to permit persons to whom the Software is furnished to do so,
+# subject to the following conditions:
+#
+# The Software shall not be used nor made available to TESTTailor or any
+# organization operated by Adarsh Mehta from Germany.
+# 
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+# FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+# COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+# IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+# CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+#
+
+# Simplified Chinese strings go here for Rails i18n
+zh:
+  label_la_admin: "登录审计"
+  label_la_ip_address: "IP 地址"
+  label_la_from_to: "#%{from} To #%{to} Out of %{count}"
+  label_la_audit_records_per_page: "每页显示记录数"
+  label_la_notification_email: "E-mail 通知"
+  label_la_success: 成功
+  label_la_api: API
+  label_la_url: URL
+  label_la_method: 方式
+  label_la_logging_settings: 记录
+  help_la_logging_settings: 选择审计类型
+  label_la_audit_api: 审计API登录
+  help_la_audit_api: When enabled, all API calls will be logged, respecting the "logging settings". <b>This will eventually generate large quantities of data!</b>
+  help_la_mail_address: "This email address will receive an email every time a user successfully login. Leave empty to disable."
+  mail_la_subject: "Redmine Login Audit: %{user_name} from %{ip_address} on %{date}"
+  mail_la_body_text: "%{user_name} just logged in %{instance} from %{ip_address} on %{date}"
+  mail_la_body_html: "<b>%{user_name}</b> just logged in %{instance} from <a href='http://www.ip-adress.com/ip_tracer/%{ip_address}' target='_blank'>%{ip_address}</a> on %{date}"
+  label_la_delete_older_than: "删除此日期以前的记录 "
+  label_la_delete_history: "删除记录!"
+  label_la_delete_all_history: "删除所有记录!"
+  error_la_bad_parameters: "错误参数!"
+  notice_la_records_deleted: "已删除创建于 %{date} 后的 %{count} 条记录!"
+  notice_la_records_all_deleted: "已删除 %{count} 条记录!"
+
+  settings:
+    logging:
+      nothing: 无(禁用)
+      successes: 登录成功
+      failures: 登录失败
+      both: 登录成功、失败
+
+  wice_grid:
+      show_filter_tooltip: 显示过滤器
+      hide_filter_tooltip: 隐藏过滤器
+      csv_export_tooltip: 导出到CSV文件
+      filter_tooltip: 过滤
+      reset_filter_tooltip: 重置
+      boolean_filter_true_label: "是"
+      boolean_filter_false_label: "否"
+      # Title of the icon clicking on which will show the calendar to set the FROM date.
+      date_selector_tooltip_from: 从
+      # Title of the icon clicking on which will show the calendar to set the TO date.
+      date_selector_tooltip_to: 到
+      # The title of the checkox to turn on negation
+      negation_checkbox_title: 排除
+      # link to switch to show all records
+      show_all_records_label: 全部显示
+      # tooltip for the link to switch to show all records
+      show_all_records_tooltip: 显示所有记录
+      # Warning message shown when the user wants to switch to all-records mode
+      all_queries_warning: 你确定要显示所有记录吗?
+      switch_back_to_paginated_mode_label: 切换回分页显示模式
+      select_all: 全选
+      deselect_all: 删除已选中
+      expand: 展开
+      collapse: 折叠
+
