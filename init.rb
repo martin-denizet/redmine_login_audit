@@ -25,7 +25,10 @@
 require_dependency 'redmine_login_audit/application_controller_patch'
 require_dependency 'redmine_login_audit/account_controller_patch'
 
+Rails.application.config.assets.precompile += %w( wice_grid.js )
+
 Rails.configuration.to_prepare do
+
   require_dependency 'auth_source'
 
   require_dependency 'redmine_login_audit/hooks'
