@@ -1,0 +1,17 @@
+# Turkish strings go here for Rails i18n
+tr:
+  label_la_admin: "Giriş Kaydı"
+  label_la_ip_address: "IP Adresi"
+  label_la_from_to: "#%{from} - #%{to} / %{count}"
+  label_la_audit_records_per_page: "Sayfa başına gösterilecek kayıt sayısı"
+  label_la_notification_email: "Bildirinin gideceği eposta adresi"
+  help_la_mail_address: "Herhangi bir kullanıcı giriş yaptığında bu adrese eposat gönderilir. Boş kalırsa eposta gitmez."
+  mail_la_subject: "Redmine Giriş Kaydı: %{user_name} %{ip_address} adresinde %{date} tarihinde"
+  mail_la_body_text: "%{user_name} kullanıcısı %{instance} giriş yaptı, %{ip_address} adresinde ve %{date} tarihinde"
+  mail_la_body_html: "<b>%{user_name}</b> kullanıcısı %{instance} giriş yaptı <a href='http://www.ip-adress.com/ip_tracer/%{ip_address}' target='_blank'>%{ip_address}</a> adresinden %{date} tarihinde"
+  label_la_delete_older_than: "Belirtilen tarihten eski kayıtları sil "
+  label_la_delete_history: "Şimdi sil!"
+  label_la_delete_all_history: "Tüm kayıtları sil!"
+  error_la_bad_parameters: "Hatalı parametre!"
+  notice_la_records_deleted: "%{count} adet kayıt silindi %{date} tarihinden itibaren!"
+  notice_la_records_all_deleted: "%{count} adet kayıt silinndi!"
