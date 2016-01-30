@@ -1,5 +1,16 @@
 #CHANGELOG
 
+## [0.2.3] - 2016-01-30
+
+### Fixed
+
+- Compatibility with Redmine 3.2.x. #22 thanks @topkool
+
+### Added
+
+- Chinese translations. Thanks @dreampet
+- Partial Turkish translations. Thanks @giraypultar
+
 ## [0.2.2] - 2015-12-13
 
 ### Fixed
