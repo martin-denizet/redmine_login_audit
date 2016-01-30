@@ -65,6 +65,8 @@ Note that enabling API authentication logging will potentially create MASSIVE am
 * R-i-c-k-y: Italian translation
 * kotashiratsuka: Japanese translations
 * alexandermeindl: German translations
+* giraypultar: Turkish translations
+* dreampet: Chinese translations
 
 Uses "Silk icon" by Mark James at http://www.famfamfam.com/ licensed under "Creative Commons Attribution 2.5 License"
 Uses WiceGrid gem by Yuri Leikind licensed under "MIT License"
@@ -76,6 +78,8 @@ Uses WiceGrid gem by Yuri Leikind licensed under "MIT License"
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+*Please do not make your pull requests on the master branch.*
 
 ## Donations
 
