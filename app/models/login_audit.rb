@@ -48,21 +48,24 @@ class LoginAudit < ActiveRecord::Base
     id = user.nil? ? 'N/A' : user.id
     api = request.format === API_FORMAT
     # Setting.plugin_redmine_login_audit['audit_api']
-    begin
-      LoginAudit.create!(
-          :user => user,
-          :ip_address => request.remote_ip,
-          :success => success,
-          #:client => request.media_type,
-          :login => login,
-          :api => api,
-          :url => request.fullpath,
-          :method => request.request_method
+    la = LoginAudit.new(
+        :user => user,
+        :ip_address => request.remote_ip,
+        :success => success,
+        #:client => request.media_type,
+        :login => login,
+        :api => api,
+        :url => request.fullpath,
+        :method => request.request_method
+    )
 
-      )
-      Rails.logger.info "LoginAudit: Saved login audit for User:'#{login}', id: #{id}, Login succeed: #{success}"
+    Rails.logger.info "LoginAudit Event: #{la.to_s}"
+
+    begin
+      la.save!
+      Rails.logger.info "LoginAudit: Saved LoginAudit for User:'#{login}', id: #{id}, Login succeed: #{success}"
     rescue Exception => e
-      Rails.logger.error "LoginAudit: Failed to save login audit for User:'#{login}', id: #{id}, Login succeed: #{success}, Error: #{e.message}"
+      Rails.logger.error "LoginAudit: Failed to save LoginAudit for User:'#{login}', id: #{id}, Login succeed: #{success}, Error: #{e.message}"
     end
   end
 
@@ -78,18 +81,22 @@ class LoginAudit < ActiveRecord::Base
     if success?
       unless Setting.plugin_redmine_login_audit['notification_email'].nil? or Setting.plugin_redmine_login_audit['notification_email'].empty?
         begin
-          flash[:error]= 'Login Audit Mailing failed' unless LoginAuditMailer.login_audit_notification(
+          Rails.logger.error "#{self.to_s} Mailing failed" unless LoginAuditMailer.login_audit_notification(
               Setting.plugin_redmine_login_audit['notification_email'],
               user,
               audit
           ).deliver
         rescue Exception => e
-          flash[:error]= "Login Audit Mailing failed: #{e}"
+          Rails.logger.error "#{self.to_s} Mailing failed: #{e}"
         end
       end
     else
 
     end
+  end
+
+  def to_s
+    "LoginAudit(User #{self.user ? self.user.id : 'Unknown'} with Login:#{self.login} IP:#{ip_address} #{self.success? ? 'Succeeded' : 'Failed'} to #{self.api? ? 'call API' : 'login'} at #{url})"
   end
 
 
@@ -128,7 +135,7 @@ class LoginAudit < ActiveRecord::Base
     end
 
     def self.get_name(key)
-      I18n.t(CODES_MAP[key].downcase, scope: :'settings.logging') if  CODES_MAP[key]
+      I18n.t(CODES_MAP[key].downcase, scope: :'settings.logging') if CODES_MAP[key]
     end
   end
 
