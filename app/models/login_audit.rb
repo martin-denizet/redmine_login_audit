@@ -84,7 +84,7 @@ class LoginAudit < ActiveRecord::Base
           Rails.logger.error "#{self.to_s} Mailing failed" unless LoginAuditMailer.login_audit_notification(
               Setting.plugin_redmine_login_audit['notification_email'],
               user,
-              audit
+              self
           ).deliver
         rescue Exception => e
           Rails.logger.error "#{self.to_s} Mailing failed: #{e}"
