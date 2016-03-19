@@ -1,8 +1,6 @@
 # Redmine Login Audit
 
-If you like this plugin, you're welcome to endorse me on CoderWall!
-[![endorse](https://api.coderwall.com/martin-denizet/endorsecount.png)](https://coderwall.com/martin-denizet)
-You can also visit my blog: http://martin-denizet.com
+If you like this plugin, you're welcome to visit my blog: http://martin-denizet.com
 
 ## Features
 
@@ -67,6 +65,7 @@ Note that enabling API authentication logging will potentially create MASSIVE am
 * alexandermeindl: German translations
 * giraypultar: Turkish translations
 * dreampet: Chinese translations
+* Marco Senn: Support
 
 Uses "Silk icon" by Mark James at http://www.famfamfam.com/ licensed under "Creative Commons Attribution 2.5 License"
 Uses WiceGrid gem by Yuri Leikind licensed under "MIT License"

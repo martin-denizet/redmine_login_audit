@@ -1,5 +1,16 @@
 #CHANGELOG
 
+## [0.2.4] - 2016-03-19
+
+### Fixed
+
+- Compatibility with Redmine 3.2.1. #27 thanks @GitRms and Marco Senn
+- Migrations rollback. thanks Marco Senn
+
+### Changed
+
+- Improved logging
+
 ## [0.2.3] - 2016-01-30
 
 ### Fixed
