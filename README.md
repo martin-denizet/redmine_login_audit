@@ -37,6 +37,10 @@ Install the dependencies:
 
 ```bundle install```
 
+For bitnami users:
+
+```/home/bitnami/apps/redmine/htdocs/bundle install --no-deployment```
+
 Run the database migrations:
 
 ```RAILS_ENV=production bundle exec rake redmine:plugins:migrate```
