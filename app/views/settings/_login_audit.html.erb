@@ -1,26 +1,109 @@
+<h3><%= t(:label_la_logging_settings_header)%></h3>
 <% if @settings[:log_setting].to_i == LoginAudit::LoggingSetting::NOTHING %>
-    <p class="nodata">Not logging anything</p>
+    <p class="nodata"><%= t(:message_la_logging_disabled)%></p>
 <% end %>
 <p>
   <label><%= l(:label_la_logging_settings) %></label>
   <%= select_tag 'settings[log_setting]', options_for_select(
-          LoginAudit::LoggingSetting.to_dropdown, @settings[:log_setting] || ''
+      LoginAudit::LoggingSetting.to_dropdown, @settings[:log_setting] || ''
   )
   %>
   <em class="info"> <%= l(:help_la_logging_settings) %></em>
-</p>
-
-<p>
-  <label><%= l(:label_la_notification_email) %></label>
-  <%= text_field_tag 'settings[notification_email]', @settings[:notification_email] %>
-  <em class="info"> <%= l(:help_la_mail_address) %></em>
-</p>
-<p>
-  <label><%= l(:label_la_audit_records_per_page) %></label>
-  <%= text_field_tag 'settings[audit_rows_per_page]', @settings[:audit_rows_per_page] %>
 </p>
 <p>
   <label><%= l(:label_la_audit_api) %></label>
   <%= check_box_tag 'settings[audit_api]', 1, @settings[:audit_api] %>
   <em class="info"> <%= l(:help_la_audit_api).html_safe %></em>
 </p>
+<h3><%= t(:label_la_notification_settings_header) %></h3>
+<em class="info"> <%= l(:help_la_notifications) %></em>
+<p>
+<table id="alert-recipients">
+  <thead>
+  <tr>
+    <th></th>
+    <th colspan="2"><%= t(:label_la_web)%></th>
+    <th colspan="2"><%= t(:label_la_api)%></th>
+    <th></th>
+  </tr>
+  <tr>
+    <th><%= t(:label_la_recipient_email)%></th>
+    <th><%= t(:label_la_recipient_on_login_success)%></th>
+    <th><%= t(:label_la_recipient_on_login_failure)%></th>
+    <th><%= t(:label_la_recipient_on_login_success)%></th>
+    <th><%= t(:label_la_recipient_on_login_failure)%></th>
+    <th><a class="icon icon-add add-recipient" href="#"><%= t(:button_add) %></a></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% if @settings[:recipients] and @settings[:recipients].any? %>
+      <% @settings[:recipients].each do |recipient| %>
+          <tr>
+            <td>
+              <input type="email" name="settings[recipients][][email]" value="<%= recipient['email'] %>" required></td>
+            <td>
+              <input type="checkbox" name="settings[recipients][][web_success]" <%= 'CHECKED' if recipient['web_success'] %>>
+            </td>
+            <td>
+              <input type="checkbox" name="settings[recipients][][web_failure]" <%= 'CHECKED' if recipient['web_failure'] %>>
+            </td>
+            <td>
+              <input type="checkbox" name="settings[recipients][][api_success]" <%= 'CHECKED' if recipient['api_success'] %>>
+            </td>
+            <td>
+              <input type="checkbox" name="settings[recipients][][api_failure]" <%= 'CHECKED' if recipient['api_failure'] %>>
+            </td>
+            <td>
+              <a class="icon icon-del remove-recipient" href="#"><%= t(:button_delete) %></a>
+            </td>
+          </tr>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>
+</p>
+
+<h3><%= t(:label_la_display_settings_header) %></h3>
+<p>
+  <label><%= l(:label_la_audit_records_per_page) %></label>
+  <%= text_field_tag 'settings[audit_rows_per_page]', @settings[:audit_rows_per_page] %>
+</p>
+
+<script type="text/javascript">
+  jQuery(document).ready(function ($) {
+    function removeLinks() {
+      $(".remove-recipient").click(function () {
+        $(this).closest('tr').remove();
+        return false;
+      });
+    }
+
+    $(".add-recipient").click(function () {
+      $(this).closest('table').append(
+          '<tr>' +
+          '<td>' +
+          '<input type="email" name="settings[recipients][][email]" value="" required></td>' +
+          '<td>' +
+          '<input type="checkbox" name="settings[recipients][][web_success]">' +
+          '</td>' +
+          '<td>' +
+          '<input type="checkbox" name="settings[recipients][][web_failure]">' +
+          '</td>' +
+          '<td>' +
+          '<input type="checkbox" name="settings[recipients][][api_success]">' +
+          '</td>' +
+          '<td>' +
+          '<input type="checkbox" name="settings[recipients][][api_failure]">' +
+          '</td>' +
+          '<td>' +
+          '<a class="icon icon-del remove-recipient" href="#"><%= t(:button_delete) %></a>' +
+          '</td>' +
+          '</tr>'
+      );
+      removeLinks();
+      return false;
+    });
+
+    removeLinks();
+  });
+</script>

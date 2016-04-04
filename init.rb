@@ -34,6 +34,19 @@ Rails.configuration.to_prepare do
   require_dependency 'redmine_login_audit/hooks'
 
   require_dependency File.expand_path('../config/wice_grid_config', __FILE__)
+
+  #Migration for settings from version <= 0.2.4
+  settings = Setting.plugin_redmine_login_audit
+  if settings['notification_email']
+    recipients = Setting.plugin_redmine_login_audit['recipients']
+    recipients = [] if recipients.empty?
+    recipients << {'email' => Setting.plugin_redmine_login_audit['notification_email'], 'web_success' => 'on'}
+
+    settings['notification_email'] = nil
+
+    Setting.plugin_redmine_login_audit = settings
+  end
+
 end
 
 Redmine::Plugin.register :redmine_login_audit do
@@ -50,7 +63,7 @@ Redmine::Plugin.register :redmine_login_audit do
 
   settings :default => {
       :log_setting => 0,
-      :notification_email => '',
+      :recipients => [],
       :audit_rows_per_page => 50,
       :audit_api => false
   },
