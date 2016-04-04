@@ -53,10 +53,6 @@ The installation is now finished and you will be able to use the plugin after yo
 Please check the plugin configuration page before using it.
 Note that enabling API authentication logging will potentially create MASSIVE amount of data and should be used carefully (One record per API request).
 
-## Known issues
-
-* The calendar icon will fail to load if Redmine is installed in a sub-URI (domain.com/redmine)
-
 ## Credits
 
 * Krzysztof Dryja: Original idea and code contribution
