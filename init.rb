@@ -38,10 +38,11 @@ Rails.configuration.to_prepare do
   #Migration for settings from version <= 0.2.4
   settings = Setting.plugin_redmine_login_audit
   if settings['notification_email']
-    recipients = Setting.plugin_redmine_login_audit['recipients']
-    recipients = [] if recipients.empty?
-    recipients << {'email' => Setting.plugin_redmine_login_audit['notification_email'], 'web_success' => 'on'}
+    recipients = settings['recipients']
+    recipients = [] if recipients.nil? || recipients.empty?
+    recipients << {'email' => settings['notification_email'], 'web_success' => 'on'} unless settings['notification_email'].nil? || settings['notification_email'].empty?
 
+    settings['recipients'] = recipients
     settings['notification_email'] = nil
 
     Setting.plugin_redmine_login_audit = settings
