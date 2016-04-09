@@ -6,13 +6,12 @@ If you like this plugin, you're welcome to visit my blog: http://martin-denizet.
 
 * Log successful and/or unsuccessful login attempts in Redmine
 * Log API authentications
-* Can send email on event
+* Send email on events
 * Filtering
 * CSV export
 
 ## Roadmap
 
-* Notify by email of failures
 * Modify the way records are deleted
 * Allow to select visible columns of the table
 * Allow to configure "honeypot" users
@@ -37,15 +36,17 @@ Install the dependencies:
 
 ```bundle install```
 
-For bitnami users:
-
-```/home/bitnami/apps/redmine/htdocs/bundle install --no-deployment```
-
 Run the database migrations:
 
 ```RAILS_ENV=production bundle exec rake redmine:plugins:migrate```
 
 The installation is now finished and you will be able to use the plugin after you restart your Redmine instance.
+
+
+If you are using bitnami, the commands should be: (If you have no idea what it means, it's not for you)
+
+```/home/bitnami/apps/redmine/htdocs/bundle install --no-deployment```
+```/home/bitnami/apps/redmine/htdocs/bundle exec rake redmine:plugins:migrate```
 
 
 ## Configuration
@@ -65,7 +66,10 @@ Note that enabling API authentication logging will potentially create MASSIVE am
 * alexandermeindl: German translations
 * giraypultar: Turkish translations
 * dreampet: Chinese translations
+* GitRms: Testing
 * Marco Senn: Support
+* Thorsten Jaeger: Support
+
 
 Uses "Silk icon" by Mark James at http://www.famfamfam.com/ licensed under "Creative Commons Attribution 2.5 License"
 Uses WiceGrid gem by Yuri Leikind licensed under "MIT License"

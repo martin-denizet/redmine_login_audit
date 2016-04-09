@@ -9,8 +9,8 @@
 
 ### Fixed
 
-- Japanese translations #26 thanks @anton-sergeev
-- Calendar icon not showing when Redmine is installed in a sub-URI #26 thanks @anton-sergeev
+- Japanese translations. #26 thanks @anton-sergeev
+- Calendar icon not showing when Redmine is installed in a sub-URI. #26 thanks @anton-sergeev
 
 ## [0.2.4] - 2016-03-19
 
