@@ -34,7 +34,7 @@ class LoginAuditMailer < Mailer
 
     mail :to => recipients,
          :subject => "#{l(
-             (login_audit.api? ? :mail_la_success_subject : :mail_la_failure_subject),
+             (login_audit.success? ? :mail_la_success_subject : :mail_la_failure_subject),
              :user_name => login_audit.login,
              :source => login_audit.source,
              :ip_address => login_audit.ip_address,
