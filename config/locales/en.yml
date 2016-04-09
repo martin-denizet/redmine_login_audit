@@ -25,23 +25,61 @@
 
 # English strings go here for Rails i18n
 en:
-  label_la_admin: "Login Audit"
-  label_la_ip_address: "IP Address"
-  label_la_from_to: "#%{from} To #%{to} Out of %{count}"
-  label_la_audit_records_per_page: "Number of records to display per page"
-  label_la_notification_email: "Email to notify"
-  label_la_success: Success
-  label_la_api: API
-  label_la_url: URL
-  label_la_method: Method
+  #label_la_notification_email: "Email to notify"
+  #help_la_mail_address: "This email address will receive an email every time a user successfully login. Leave empty to disable."
+  #label_la_from_to: "#%{from} To #%{to} Out of %{count}"
+
+  ## SETTINGS - Logging
+  label_la_logging_settings_header: Logging settings
   label_la_logging_settings: Log
   help_la_logging_settings: Select what to audit
+  settings:
+    logging:
+      nothing: Nothing (Disable)
+      successes: Successes only
+      failures: Failures only
+      both: Failures and successes
   label_la_audit_api: Audit API
   help_la_audit_api: When enabled, all API calls will be logged, respecting the "logging settings". <b>This will eventually generate large quantities of data!</b>
-  help_la_mail_address: "This email address will receive an email every time a user successfully login. Leave empty to disable."
-  mail_la_subject: "Redmine Login Audit: %{user_name} from %{ip_address} on %{date}"
-  mail_la_body_text: "%{user_name} just logged in %{instance} from %{ip_address} on %{date}"
-  mail_la_body_html: "<b>%{user_name}</b> just logged in %{instance} from <a href='http://www.ip-adress.com/ip_tracer/%{ip_address}' target='_blank'>%{ip_address}</a> on %{date}"
+  message_la_logging_disabled: Logging is disabled, nothing is logged!
+  ## SETTINGS - Display
+  label_la_display_settings_header: Display settings
+  label_la_audit_records_per_page: "Number of records to display per page"
+
+  ## SETTINGS - Recipients
+  label_la_notification_settings_header: Notification settings
+  help_la_notifications: Configure repicients for alerts. Sending email alerts can affect performances when not using async email
+  label_la_recipient_email: Email
+  label_la_recipient_on_login_success: Success
+  label_la_recipient_on_login_failure: Failure
+
+  ## Notification Emails
+  ## Success Email
+  mail_la_success_subject: "[%{source} Login Success] '%{user_name}' - %{ip_address}"
+  mail_la_success_body_text: "Successful %{source} login for user '%{user_name}' from %{ip_address}
+  Redmine instance: %{instance}
+  Date: %{date}
+  "
+  mail_la_success_body_html: "Successful %{source} login for user '<b>%{user_name}</b>' from <a href='http://www.ip-adress.com/ip_tracer/%{ip_address}' target='_blank'>%{ip_address}</a><br>
+  Redmine instance: %{instance}<br>
+  Date: %{date}
+  "
+
+  ## Failure Email
+  mail_la_failure_subject: "[%{source} Login Failure] '%{user_name}' - %{ip_address}"
+  mail_la_failure_body_text: "Failed %{source} login for user '%{user_name}' from %{ip_address}
+  Redmine instance: %{instance}
+  Date: %{date}
+  "
+  mail_la_failure_body_html: "Failed %{source} login for user '<b>%{user_name}</b>' from <a href='http://www.ip-adress.com/ip_tracer/%{ip_address}' target='_blank'>%{ip_address}</a><br>
+  Redmine instance: %{instance}<br>
+  Date: %{date}
+  "
+
+  ## Login Audit listing
+  label_la_admin: "Login Audit"
+  label_la_ip_address: "IP Address"
+
   label_la_delete_older_than: "Delete records older than "
   label_la_delete_history: "Delete now!"
   label_la_delete_all_history: "Delete all records!"
@@ -49,13 +87,14 @@ en:
   notice_la_records_deleted: "%{count} records created after %{date} were deleted!"
   notice_la_records_all_deleted: "%{count} records were deleted!"
 
-  settings:
-    logging:
-      nothing: Nothing (Disable)
-      successes: Successes only
-      failures: Failures only
-      both: Failures and successes
+  ## Grid headers
+  label_la_success: Success
+  label_la_web: WEB
+  label_la_api: API
+  label_la_url: URL
+  label_la_method: Method
 
+  ## Grid controls
   wice_grid:
       show_filter_tooltip: Show filter
       hide_filter_tooltip: Hide filter
@@ -68,7 +107,7 @@ en:
       date_selector_tooltip_from: From
       # Title of the icon clicking on which will show the calendar to set the TO date.
       date_selector_tooltip_to: To
-      # The title of the checkox to turn on negation
+      # The title of the checkbox to turn on negation
       negation_checkbox_title: Exclude
       # link to switch to show all records
       show_all_records_label: show all

@@ -35,6 +35,10 @@ class LoginAudit < ActiveRecord::Base
 
   API_FORMAT = 'json'
 
+  def source
+    self.api? ? 'api' : 'web'
+  end
+
   def self.success(user, request, params={})
     LoginAudit.log(user, true, request, params) if log_success?
   end
@@ -78,21 +82,42 @@ class LoginAudit < ActiveRecord::Base
   end
 
   def send_notification
-    if success?
-      unless Setting.plugin_redmine_login_audit['notification_email'].nil? or Setting.plugin_redmine_login_audit['notification_email'].empty?
-        begin
-          Rails.logger.error "#{self.to_s} Mailing failed" unless LoginAuditMailer.login_audit_notification(
-              Setting.plugin_redmine_login_audit['notification_email'],
-              user,
-              self
-          ).deliver
-        rescue Exception => e
-          Rails.logger.error "#{self.to_s} Mailing failed: #{e}"
-        end
-      end
-    else
+    recipients = self.class.send("recipients_for_#{api? ? 'api' : 'web'}_#{success? ? 'success' : 'failure'}")
 
+    if recipients.any?
+      begin
+        Rails.logger.error "#{self.to_s} Mailing failed" unless LoginAuditMailer.login_audit_notification(
+            recipients,
+            self
+        ).deliver
+      rescue Exception => e
+        Rails.logger.error "#{self.to_s} Mailing failed: #{e}"
+      end
     end
+  end
+
+
+  def self.recipients
+    unless Setting.plugin_redmine_login_audit['recipients'].nil? or Setting.plugin_redmine_login_audit['recipients'].empty?
+      return Setting.plugin_redmine_login_audit['recipients']
+    end
+    return []
+  end
+
+  def self.recipients_for_web_success
+    self.recipients.select { |r| !r['web_success'].nil? }.collect { |r| r['email'] }
+  end
+
+  def self.recipients_for_web_failure
+    self.recipients.select { |r| !r['web_failure'].nil? }.collect { |r| r['email'] }
+  end
+
+  def self.recipients_for_api_success
+    self.recipients.select { |r| !r['api_success'].nil? }.collect { |r| r['email'] }
+  end
+
+  def self.recipients_for_api_failure
+    self.recipients.select { |r| !r['api_failure'].nil? }.collect { |r| r['email'] }
   end
 
   def to_s

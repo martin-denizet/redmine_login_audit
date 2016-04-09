@@ -1,5 +1,17 @@
 #CHANGELOG
 
+## [0.3.0] - 2016-04-09
+
+### Added
+
+- Multiple email notification recipients
+- Email notification for login failures
+
+### Fixed
+
+- Japanese translations. #26 thanks @anton-sergeev
+- Calendar icon not showing when Redmine is installed in a sub-URI. #26 thanks @anton-sergeev
+
 ## [0.2.4] - 2016-03-19
 
 ### Fixed

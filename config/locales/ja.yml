@@ -1,5 +1,5 @@
-# English strings go here for Rails i18n
-en:
+# Japanese strings go here for Rails i18n
+ja:
   label_la_admin: "Login履歴"
   label_la_ip_address: "IP Address"
   label_la_from_to: "#%{from} から #%{to} から %{count}"

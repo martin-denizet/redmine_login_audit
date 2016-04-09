@@ -1,1 +1,8 @@
-<%= raw l(:mail_la_body_html, :user_name => @logged_user.name, :instance => '', :ip_address => @login_audit.ip_address, :date => format_time(@login_audit.created_on)) %>
+<%=
+  raw l("mail_la_#{@login_audit.success? ? 'success' : 'failure'}_body_html",
+        :user_name => @login_audit.login,
+        :source => @login_audit.source.upcase,
+        :instance => Setting.host_name.to_s,
+        :ip_address => @login_audit.ip_address,
+        :date => format_time(@login_audit.created_on))
+%>
