@@ -1,5 +1,11 @@
 #CHANGELOG
 
+## [0.3.1] - 2016-04-10
+
+### Fixed
+
+- Updated Turkish translations. #29 thanks @atopcu
+
 ## [0.3.0] - 2016-04-09
 
 ### Added
