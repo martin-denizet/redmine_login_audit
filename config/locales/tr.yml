@@ -1,17 +1,96 @@
 # Turkish strings go here for Rails i18n
 tr:
-  label_la_admin: "Giriş Kaydı"
-  label_la_ip_address: "IP Adresi"
-  label_la_from_to: "#%{from} - #%{to} / %{count}"
-  label_la_audit_records_per_page: "Sayfa başına gösterilecek kayıt sayısı"
-  label_la_notification_email: "Bildirinin gideceği eposta adresi"
-  help_la_mail_address: "Herhangi bir kullanıcı giriş yaptığında bu adrese eposat gönderilir. Boş kalırsa eposta gitmez."
-  mail_la_subject: "Redmine Giriş Kaydı: %{user_name} %{ip_address} adresinde %{date} tarihinde"
-  mail_la_body_text: "%{user_name} kullanıcısı %{instance} giriş yaptı, %{ip_address} adresinde ve %{date} tarihinde"
-  mail_la_body_html: "<b>%{user_name}</b> kullanıcısı %{instance} giriş yaptı <a href='http://www.ip-adress.com/ip_tracer/%{ip_address}' target='_blank'>%{ip_address}</a> adresinden %{date} tarihinde"
+  #label_la_notification_email: "Email to notify"
+  #help_la_mail_address: "This email address will receive an email every time a user successfully login. Leave empty to disable."
+  #label_la_from_to: "#%{from} To #%{to} Out of %{count}"
+
+  ## SETTINGS - Logging
+  label_la_logging_settings_header: Loglama ayarları
+  label_la_logging_settings: Log
+  help_la_logging_settings: Neyin denetleneceğini seç
+  settings:
+    logging:
+      nothing: Hiçbirşey (Pasif)
+      successes: Başarılı olanlar sadece
+      failures: Başarısız olanlar sadece
+      both: Başarılı ve Başarısız olanlar
+  label_la_audit_api: API Denetle
+  help_la_audit_api: Etkinleştirildiğinde, Log ayarlarına ilişkin tüm API çağrıları kayedilir. <b>Bu çok fazla veri kaydına neden olabilir!</b>
+  message_la_logging_disabled: Loglama kapalı, hiçbirşey loglanmıyor!
+  ## SETTINGS - Display
+  label_la_display_settings_header: Görüntüleme ayarları
+  label_la_audit_records_per_page: "Her seferde gösterilecek kayıt sayısı"
+
+  ## SETTINGS - Recipients
+  label_la_notification_settings_header: Bilgilendirme ayarları
+  help_la_notifications: Alarmlar için alıcıların konfigrasyonu. Alarm gönderimi performansı etkileyebilir eğer asenkron eposta gönderimi kullanılmıyorsa
+  label_la_recipient_email: E-posta
+  label_la_recipient_on_login_success: Başarılı
+  label_la_recipient_on_login_failure: Başarısız
+
+  ## Notification Emails
+  ## Success Email
+  mail_la_success_subject: "[Başarılı %{source} girişi] '%{user_name}' - %{ip_address}"
+  mail_la_success_body_text: "'%{user_name}', %{ip_address} IP adresinden %{source} hizmetine başarılı şekilde giriş yapmıştır
+  Servis: %{instance}
+  Zaman: %{date}
+  "
+  mail_la_success_body_html: "'<b>%{user_name}</b>' <a href='http://www.ip-adress.com/ip_tracer/%{ip_address}' target='_blank'>%{ip_address}</a> IP adresinden %{source} hizmetine başarılı şekilde giriş yapmıştır<br>
+  Servis: %{instance}<br>
+  Zaman: %{date}
+  "
+
+  ## Failure Email
+  mail_la_failure_subject: "[%{source} hizmetine girilemedi] '%{user_name}' - %{ip_address}"
+  mail_la_failure_body_text: "%{source} hizmetine '%{user_name}' kullanıcısı olarak %{ip_address} IP adresinden başarısız giriş denemesi olmuştur
+  Servis: %{instance}
+  Zaman: %{date}
+  "
+  mail_la_failure_body_html: "%{source} hizmetine '<b>%{user_name}</b>' kullanıcısı olarak <a href='http://www.ip-adress.com/ip_tracer/%{ip_address}' target='_blank'>%{ip_address}</a> IP adresinden başarısız giriş denemesi olmuştur<br>
+  Servis: %{instance}<br>
+  Zaman: %{date}
+  "
+
+  ## Login Audit listing
+  label_la_admin: "Giriş denetimi"
+  label_la_ip_address: "IP Adres"
+
   label_la_delete_older_than: "Belirtilen tarihten eski kayıtları sil "
   label_la_delete_history: "Şimdi sil!"
   label_la_delete_all_history: "Tüm kayıtları sil!"
   error_la_bad_parameters: "Hatalı parametre!"
   notice_la_records_deleted: "%{count} adet kayıt silindi %{date} tarihinden itibaren!"
   notice_la_records_all_deleted: "%{count} adet kayıt silinndi!"
+
+  ## Grid headers
+  label_la_success: Başarılı
+  label_la_web: WEB
+  label_la_api: API
+  label_la_url: URL
+  label_la_method: Metod
+
+  ## Grid controls
+  wice_grid:
+      show_filter_tooltip: Filtreyi göster
+      hide_filter_tooltip: Filtreyi gizle
+      csv_export_tooltip: CSV olarak dışa al
+      filter_tooltip: Filtre
+      reset_filter_tooltip: Sıfırla
+      boolean_filter_true_label: "evet"
+      boolean_filter_false_label: "hayır"
+      # Title of the icon clicking on which will show the calendar to set the FROM date.
+      date_selector_tooltip_from: Tarihinden
+      # Title of the icon clicking on which will show the calendar to set the TO date.
+      date_selector_tooltip_to: Tarihine
+      # The title of the checkox to turn on negation
+      negation_checkbox_title: Dışında
+      # link to switch to show all records
+      show_all_records_label: tümünü göster
+      # tooltip for the link to switch to show all records
+      show_all_records_tooltip: Tüm kayıtları gösterir
+      # Warning message shown when the user wants to switch to all-records mode
+      all_queries_warning: Tüm kayıtları görmek istediğinizen emin misiniz?
+      select_all: Tümünü seç
+      deselect_all: Seçimi kaldır
+      expand: Genişlet
+      collapse: Topla
