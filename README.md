@@ -64,7 +64,7 @@ Note that enabling API authentication logging will potentially create MASSIVE am
 * R-i-c-k-y: Italian translation
 * kotashiratsuka: Japanese translations
 * alexandermeindl: German translations
-* giraypultar: Turkish translations
+* giraypultar and atopcu: Turkish translations
 * dreampet: Chinese translations
 * GitRms: Testing
 * Marco Senn: Support
