@@ -2,7 +2,7 @@
 # Web: www.maxbrasil.net.br
 # Brasilian Portuguese strings go here for Rails i18n
 pt-BR:
-  label_la_admin: "Login Audit"
+  label_la_admin: "Auditoria de Logins"
   label_la_ip_address: "Endereço IP"
   label_la_from_to: "%{from} ao %{to} de um total de %{count}"
   label_la_audit_records_per_page: "Número de registros por página"
