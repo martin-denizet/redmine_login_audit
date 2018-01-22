@@ -58,7 +58,7 @@ Redmine::Plugin.register :redmine_login_audit do
   url 'https://github.com/martin-denizet/redmine_login_audit'
   author_url 'http://martin-denizet.com'
 
-  menu :admin_menu, :login_audit, {:controller => 'login_audit', :action => 'index'}, :caption => :label_la_admin
+  menu :admin_menu, :login_audit, {:controller => 'login_audit', :action => 'index'}, :caption => :label_la_admin, html:{'class'=>'icon'}
 
   requires_redmine :version_or_higher => '3.0.0'
 
