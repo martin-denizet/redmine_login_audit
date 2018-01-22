@@ -1,18 +1,19 @@
+<%= @settings.inspect %>
 <h3><%= t(:label_la_logging_settings_header)%></h3>
-<% if @settings[:log_setting].to_i == LoginAudit::LoggingSetting::NOTHING %>
+<% if @settings['log_setting'].to_i == LoginAudit::LoggingSetting::NOTHING %>
     <p class="nodata"><%= t(:message_la_logging_disabled)%></p>
 <% end %>
 <p>
   <label><%= l(:label_la_logging_settings) %></label>
   <%= select_tag 'settings[log_setting]', options_for_select(
-      LoginAudit::LoggingSetting.to_dropdown, @settings[:log_setting] || ''
+      LoginAudit::LoggingSetting.to_dropdown, @settings['log_setting'] || ''
   )
   %>
   <em class="info"> <%= l(:help_la_logging_settings) %></em>
 </p>
 <p>
   <label><%= l(:label_la_audit_api) %></label>
-  <%= check_box_tag 'settings[audit_api]', 1, @settings[:audit_api] %>
+  <%= check_box_tag 'settings[audit_api]', 1, @settings['audit_api'] %>
   <em class="info"> <%= l(:help_la_audit_api).html_safe %></em>
 </p>
 <h3><%= t(:label_la_notification_settings_header) %></h3>
@@ -36,8 +37,8 @@
   </tr>
   </thead>
   <tbody>
-  <% if @settings[:recipients] and @settings[:recipients].any? %>
-      <% @settings[:recipients].each do |recipient| %>
+  <% if @settings['recipients'] and @settings['recipients'].any? %>
+      <% @settings['recipients'].each do |recipient| %>
           <tr>
             <td>
               <input type="email" name="settings[recipients][][email]" value="<%= recipient['email'] %>" required></td>
@@ -66,7 +67,7 @@
 <h3><%= t(:label_la_display_settings_header) %></h3>
 <p>
   <label><%= l(:label_la_audit_records_per_page) %></label>
-  <%= text_field_tag 'settings[audit_rows_per_page]', @settings[:audit_rows_per_page] %>
+  <%= text_field_tag 'settings[audit_rows_per_page]', @settings['audit_rows_per_page'] %>
 </p>
 
 <script type="text/javascript">
