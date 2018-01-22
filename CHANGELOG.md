@@ -1,5 +1,16 @@
 #CHANGELOG
 
+## [0.3.2] - 2018-01-22
+
+### Fixed
+
+- Fix settings saving issue. #30 thanks @dalfry
+- Fix admin menu icon display
+
+### Changed
+
+- Changed to standard MIT license
+
 ## [0.3.1] - 2016-04-10
 
 ### Fixed
