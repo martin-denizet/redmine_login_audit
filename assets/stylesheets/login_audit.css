@@ -25,6 +25,9 @@
 
 #admin-menu a.login-audit {
     background-image: url(../images/textfield_key.png);
+    background-position: 0% 50%;
+    background-repeat: no-repeat;
+    padding-left: 20px;
 }
 
 div.login-audit-pager {
