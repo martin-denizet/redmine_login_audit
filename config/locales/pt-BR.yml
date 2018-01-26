@@ -1,17 +1,97 @@
-# Author: Maiko de Andrade <maikovisky@gmail.com>
-# Web: www.maxbrasil.net.br
-# Brasilian Portuguese strings go here for Rails i18n
+# Portuguese Brazil strings go here for Rails i18n
+# Author: Adriano Baptistella
 pt-BR:
+  #label_la_notification_email: "E-mail para notificação"
+  #help_la_mail_address: "Este endereço de e-mail receberá as notificações de login. Deixe em branco para desabilitar."
+  #label_la_from_to: "#%{from} To #%{to} Out of %{count}"
+
+  ## SETTINGS - Logging
+  label_la_logging_settings_header: Configurações de Login
+  label_la_logging_settings: Log
+  help_la_logging_settings: Selecione o que deseja auditar
+  settings:
+    logging:
+      nothing: Nada (desabilitado)
+      successes: Sucesso
+      failures: Falha
+      both: Falhas e Sucessos
+  label_la_audit_api: Auditoria API
+  help_la_audit_api: Quando ativado, todas as chamadas da API serão registradas, respeitando as "configurações de registro". <b> Isso acabará por gerar grandes quantidades de dados!</b>
+  message_la_logging_disabled: O registro está desabilitado, nada é registrado!
+  ## SETTINGS - Display
+  label_la_display_settings_header: Configuração de visualização
+  label_la_audit_records_per_page: "Numero de registros por página"
+
+  ## SETTINGS - Recipients
+  label_la_notification_settings_header: Configuração de notificações
+  help_la_notifications: Configure repicientes para alertas. O envio de alertas por e-mail pode afetar performance.
+  label_la_recipient_email: E-mail
+  label_la_recipient_on_login_success: Sucesso
+  label_la_recipient_on_login_failure: Falha
+
+  ## Notification Emails
+  ## Success Email
+  mail_la_success_subject: "[%{source} Login Success] '%{user_name}' - %{ip_address}"
+  mail_la_success_body_text: "Sucesso %{source} login para o usuário '%{user_name}' do endereço %{ip_address}
+  Redmine instance: %{instance}
+  Date: %{date}
+  "
+  mail_la_success_body_html: "Sucesso %{source} login para o usuário '<b>%{user_name}</b>' do endereço <a href='http://www.ip-adress.com/ip_tracer/%{ip_address}' target='_blank'>%{ip_address}</a><br>
+  Redmine instance: %{instance}<br>
+  Date: %{date}
+  "
+
+  ## Failure Email
+  mail_la_failure_subject: "[%{source} Falha de Login] '%{user_name}' - %{ip_address}"
+  mail_la_failure_body_text: "Falhou %{source} login para o usuário '%{user_name}' do endereço %{ip_address}
+  Redmine instance: %{instance}
+  Date: %{date}
+  "
+  mail_la_failure_body_html: "Falhou %{source} login para o usuário '<b>%{user_name}</b>' do endereço <a href='http://www.ip-adress.com/ip_tracer/%{ip_address}' target='_blank'>%{ip_address}</a><br>
+  Redmine instance: %{instance}<br>
+  Date: %{date}
+  "
+
+  ## Login Audit listing
   label_la_admin: "Auditoria de Logins"
-  label_la_ip_address: "Endereço IP"
-  label_la_from_to: "%{from} ao %{to} de um total de %{count}"
-  label_la_audit_records_per_page: "Número de registros por página"
-  label_la_notification_email: "Email para notificação"
-  help_la_mail_address: "Este endereço de e-mail irá receber e-mail cada vez que um usuário tiver sucesso ao logar. Deixe em branco para desabilitar"
-  mail_la_subject: "Redmine Login Audit: %{user_name} do %{ip_address} em %{date}"
-  mail_la_body_text: "%{user_name} entrou %{instance} do %{ip_address} em %{date}"
-  mail_la_body_html: "<b>%{user_name}</b> just logged in %{instance} from <a href='http://www.ip-adress.com/ip_tracer/%{ip_address}' target='_blank'>%{ip_address}</a> on %{date}"
-  label_la_delete_older_than: "Apagar registros mais antigos que "
-  label_la_delete_history: "Apagar agora!"
-  error_la_bad_parameters: "Parametros inválidos!"
-  notice_la_records_deleted: "%{count} registros criados após %{date} que foram apagados!"
+  label_la_ip_address: "Endereço de IP"
+
+  label_la_delete_older_than: "Remover registros mais velhos que "
+  label_la_delete_history: "Remover agora!"
+  label_la_delete_all_history: "Remover todos os registros!"
+  error_la_bad_parameters: "Parâmetros ruins!"
+  notice_la_records_deleted: "%{count} registros criados após %{date} foram excluídos!"
+  notice_la_records_all_deleted: "%{count} os registros foram excluídos!"
+
+  ## Grid headers
+  label_la_success: Sucesso
+  label_la_web: WEB
+  label_la_api: API
+  label_la_url: URL
+  label_la_method: Método
+
+  ## Grid controls
+  wice_grid:
+      show_filter_tooltip: Mostrar filtro
+      hide_filter_tooltip: Esconder filtro
+      csv_export_tooltip: Exportar para CSV
+      filter_tooltip: Filtro
+      reset_filter_tooltip: Limpar
+      boolean_filter_true_label: "sim"
+      boolean_filter_false_label: "não"
+      # Title of the icon clicking on which will show the calendar to set the FROM date.
+      date_selector_tooltip_from: De
+      # Title of the icon clicking on which will show the calendar to set the TO date.
+      date_selector_tooltip_to: Para
+      # The title of the checkbox to turn on negation
+      negation_checkbox_title: Excluir
+      # link to switch to show all records
+      show_all_records_label: mostrar todos
+      # tooltip for the link to switch to show all records
+      show_all_records_tooltip: Mostrar todos os registros
+      # Warning message shown when the user wants to switch to all-records mode
+      all_queries_warning: Tem certeza de que deseja exibir todos os registros?
+      select_all: Selecionar todos
+      deselect_all: Remover selecionados
+      expand: Expandir
+      collapse: Recolher
