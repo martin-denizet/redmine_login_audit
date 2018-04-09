@@ -1,5 +1,11 @@
 #CHANGELOG
 
+## [0.3.3] - TBA
+
+### Fixed
+
+- Increased URL size from 155 to 255 characters and prevent crash if length exceeds the limit. #31 thanks @dalfry
+
 ## [0.3.2] - 2018-01-22
 
 ### Fixed

@@ -8,6 +8,7 @@ class LoginAudit < ActiveRecord::Base
 
   after_create :send_notification
 
+  before_create :truncate_url
   belongs_to :user
 
   attr_accessible :user, :ip_address, :success, :login, :api, :url, :method
@@ -143,4 +144,16 @@ class LoginAudit < ActiveRecord::Base
     end
   end
 
+  # If the URL exceeds the excepted length
+  def truncate_url
+    self.url.truncate(255, omission: '[...]') if self.url
+  end
+
+  def filter_out_api_key
+    if Setting.plugin_redmine_login_audit['audit_api_filter_out_keys']
+      if self.url
+        self.url.sub!(/&?key=\w+/,'&key=[FILTERED]')
+      end
+    end
+  end
 end
