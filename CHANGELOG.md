@@ -4,7 +4,8 @@
 
 ### Added
 
-- Option to filter out 'key' GET parameters in API URLs. #31 thanks @dalfry
+- Option to filter out 'key' GET parameters in API URLs. #31 thanks @dalfry for the idea
+- Basic tests
 
 ### Fixed
 
