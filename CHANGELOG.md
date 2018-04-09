@@ -15,7 +15,7 @@
 ### Fixed
 
 - Fix settings saving issue. #30 thanks @dalfry
-- Fix admin menu icon display
+- Fix admin menu icon display. #32, #35 thanks @tofi86
 
 ### Changed
 
