@@ -1,7 +1,7 @@
-<%= @settings.inspect %>
-<h3><%= t(:label_la_logging_settings_header)%></h3>
+<%= @settings.inspect if Rails.env == 'development' %>
+<h3><%= t(:label_la_logging_settings_header) %></h3>
 <% if @settings['log_setting'].to_i == LoginAudit::LoggingSetting::NOTHING %>
-    <p class="nodata"><%= t(:message_la_logging_disabled)%></p>
+    <p class="nodata"><%= t(:message_la_logging_disabled) %></p>
 <% end %>
 <p>
   <label><%= l(:label_la_logging_settings) %></label>
@@ -28,16 +28,16 @@
   <thead>
   <tr>
     <th></th>
-    <th colspan="2"><%= t(:label_la_web)%></th>
-    <th colspan="2"><%= t(:label_la_api)%></th>
+    <th colspan="2"><%= t(:label_la_web) %></th>
+    <th colspan="2"><%= t(:label_la_api) %></th>
     <th></th>
   </tr>
   <tr>
-    <th><%= t(:label_la_recipient_email)%></th>
-    <th><%= t(:label_la_recipient_on_login_success)%></th>
-    <th><%= t(:label_la_recipient_on_login_failure)%></th>
-    <th><%= t(:label_la_recipient_on_login_success)%></th>
-    <th><%= t(:label_la_recipient_on_login_failure)%></th>
+    <th><%= t(:label_la_recipient_email) %></th>
+    <th><%= t(:label_la_recipient_on_login_success) %></th>
+    <th><%= t(:label_la_recipient_on_login_failure) %></th>
+    <th><%= t(:label_la_recipient_on_login_success) %></th>
+    <th><%= t(:label_la_recipient_on_login_failure) %></th>
     <th><a class="icon icon-add add-recipient" href="#"><%= t(:button_add) %></a></th>
   </tr>
   </thead>
