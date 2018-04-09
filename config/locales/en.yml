@@ -21,6 +21,9 @@ en:
   label_la_audit_api: Audit API
   help_la_audit_api: When enabled, all API calls will be logged, respecting the "logging settings". <b>This will eventually generate large quantities of data!</b>
   message_la_logging_disabled: Logging is disabled, nothing is logged!
+  label_la_audit_api_filter_out_keys: Filter out 'key' parameter in URLs (recommended)
+  help_la_audit_api_filter_out_keys: "API keys can be send as GET parameter and logged by Login Audit. This presents a security risk. Enable this option to hide keys in URLs<br/>Without filtering: URL=/easy_gantt/projects.json?key=bceafa8e4154ccd5b970d211ecc02389074a3f09<br/>With filtering: URL=/easy_gantt/projects.json?key=[FILTERED]"
+
   ## SETTINGS - Display
   label_la_display_settings_header: Display settings
   label_la_audit_records_per_page: "Number of records to display per page"

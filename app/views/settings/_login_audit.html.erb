@@ -16,6 +16,11 @@
   <%= check_box_tag 'settings[audit_api]', 1, @settings['audit_api'] %>
   <em class="info"> <%= l(:help_la_audit_api).html_safe %></em>
 </p>
+<p>
+  <label><%= l(:label_la_audit_api_filter_out_keys) %></label>
+  <%= check_box_tag 'settings[audit_api_filter_out_keys]', 1, @settings['audit_api_filter_out_keys'] %>
+  <em class="info"> <%= l(:help_la_audit_api_filter_out_keys).html_safe %></em>
+</p>
 <h3><%= t(:label_la_notification_settings_header) %></h3>
 <em class="info"> <%= l(:help_la_notifications) %></em>
 <p>

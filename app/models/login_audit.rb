@@ -9,6 +9,8 @@ class LoginAudit < ActiveRecord::Base
   after_create :send_notification
 
   before_create :truncate_url
+  before_create :filter_out_api_key
+
   belongs_to :user
 
   attr_accessible :user, :ip_address, :success, :login, :api, :url, :method

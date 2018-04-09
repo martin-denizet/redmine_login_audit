@@ -2,6 +2,10 @@
 
 ## [0.3.3] - TBA
 
+### Added
+
+- Option to filter out 'key' GET parameters in API URLs. #31 thanks @dalfry
+
 ### Fixed
 
 - Increased URL size from 155 to 255 characters and prevent crash if length exceeds the limit. #31 thanks @dalfry
