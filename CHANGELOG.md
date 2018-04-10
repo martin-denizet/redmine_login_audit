@@ -6,6 +6,7 @@
 
 - Option to filter out 'key' GET parameters in API URLs. #31 thanks @dalfry for the idea
 - Basic tests
+- Portuguese translations. #34 #33 thanks @adrianobr
 
 ### Fixed
 
