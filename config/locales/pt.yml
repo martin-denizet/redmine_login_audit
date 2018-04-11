@@ -1,0 +1,15 @@
+# Brasilian Portuguese strings go here for Rails i18n
+pt:
+  label_la_admin: "Auditoria de Logins"
+  label_la_ip_address: "Endereço IP"
+  label_la_from_to: "%{from} ao %{to} de um total de %{count}"
+  label_la_audit_records_per_page: "Número de registros por página"
+  label_la_notification_email: "Email para notificação"
+  help_la_mail_address: "Este endereço de e-mail irá receber e-mail cada vez que um usuário tiver sucesso ao logar. Deixe em branco para desabilitar"
+  mail_la_subject: "Redmine Login Audit: %{user_name} do %{ip_address} em %{date}"
+  mail_la_body_text: "%{user_name} entrou %{instance} do %{ip_address} em %{date}"
+  mail_la_body_html: "<b>%{user_name}</b> just logged in %{instance} from <a href='http://www.ip-adress.com/ip_tracer/%{ip_address}' target='_blank'>%{ip_address}</a> on %{date}"
+  label_la_delete_older_than: "Apagar registros mais antigos que "
+  label_la_delete_history: "Apagar agora!"
+  error_la_bad_parameters: "Parametros inválidos!"
+  notice_la_records_deleted: "%{count} registros criados após %{date} que foram apagados!"

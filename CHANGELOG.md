@@ -1,11 +1,24 @@
 #CHANGELOG
 
+## [0.3.3] - 2018-04-11 **Migration required**
+
+### Added
+
+- Option to filter out 'key' GET parameters in API URLs. #31 thanks @dalfry for the idea
+- Basic tests
+- Portuguese translations. #34 #33 thanks @adrianobr
+
+### Fixed
+
+- Increased URL size from 155 to 255 characters and prevent crash if length exceeds the limit. #31 thanks @dalfry
+- Removed debug display on settings page. #36 thanks @adrianobr
+
 ## [0.3.2] - 2018-01-22
 
 ### Fixed
 
 - Fix settings saving issue. #30 thanks @dalfry
-- Fix admin menu icon display
+- Fix admin menu icon display. #32, #35 thanks @tofi86
 
 ### Changed
 
