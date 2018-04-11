@@ -1,6 +1,6 @@
 #CHANGELOG
 
-## [0.3.3] - TBA
+## [0.3.3] - 2018-04-11 **Migration required**
 
 ### Added
 

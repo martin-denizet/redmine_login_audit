@@ -9,6 +9,15 @@ class LoginAuditTest < LoginAuditIntegrationTests
 
   fixtures :projects, :users, :email_addresses
 
+  def test_log_login_success
+    post :login, :params => {
+        :username => 'jsmith',
+        :password => 'jsmith',
+    }
+    assert_redirected_to '/my/page'
+  end
+
+
   # log_user(log,pwd) expects login to be successful
   # fail_log_user(log,pwd) expects login to fail
 
