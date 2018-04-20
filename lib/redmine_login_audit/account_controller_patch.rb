@@ -20,9 +20,9 @@ module RedmineLoginAudit
 
       end
 
-      def onthefly_creation_failed_with_login_audit
+      def onthefly_creation_failed_with_login_audit(user, auth_source_options = { })
 
-        onthefly_creation_failed_without_login_audit
+        onthefly_creation_failed_without_login_audit(user, auth_source_options)
         LoginAudit.failure(nil, request, params)
 
       end
