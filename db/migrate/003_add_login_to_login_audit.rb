@@ -1,7 +1,7 @@
 #
 # Copyright (C) 2018 Martin Denizet <martin.denizet@supinfo.com>
 #
-class AddLoginToLoginAudit < ActiveRecord::Migration
+class AddLoginToLoginAudit < ActiveRecord::Migration[5.2]
   def change
     add_column :login_audits, :login, :string
     add_column :login_audits, :api, :boolean, default: false
