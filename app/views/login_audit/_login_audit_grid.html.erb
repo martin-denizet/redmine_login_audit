@@ -26,11 +26,11 @@
     avatar(audit.user, :size => '16') unless audit.user.nil?
   end
 
-  g.column name: t(:field_firstname), in_csv: false, attribute: 'firstname', model: 'User' do |audit|
+  g.column name: t(:field_firstname), in_csv: false, attribute: 'firstname', assoc: :user do |audit|
     link_to(audit.user.firstname, user_path(audit.user), :class => audit.user.css_classes) unless audit.user.nil?
   end
 
-  g.column name: t(:field_lastname), in_csv: false, attribute: 'lastname', model: 'User' do |audit|
+  g.column name: t(:field_lastname), in_csv: false, attribute: 'lastname', assoc: :user do |audit|
     link_to(audit.user.lastname, user_path(audit.user), :class => audit.user.css_classes) unless audit.user.nil?
   end
 
