@@ -1,7 +1,7 @@
 #
 # Copyright (C) 2018 Martin Denizet <martin.denizet@supinfo.com>
 #
-class CreateLoginAudits < ActiveRecord::Migration
+class CreateLoginAudits < ActiveRecord::Migration[5.2]
   def change
     create_table :login_audits do |t|
       t.integer :user_id

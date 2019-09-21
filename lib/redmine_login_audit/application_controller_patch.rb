@@ -9,7 +9,8 @@ module RedmineLoginAudit
       base.class_eval do
         unloadable
 
-        alias_method_chain :user_setup, :login_audit
+        alias_method :user_setup_without_login_audit, :user_setup
+        alias_method :user_setup, :user_setup_with_login_audit
       end
     end
 

@@ -1,7 +1,7 @@
 #
 # Copyright (C) 2018 Martin Denizet <martin.denizet@supinfo.com>
 #
-class AddIpAddressLimit < ActiveRecord::Migration
+class AddIpAddressLimit < ActiveRecord::Migration[5.2]
   def self.up
     # 39 for IPv6, 15 for IPv4
     change_column :login_audits, :ip_address, :string, :limit => 39
